@@ -1,0 +1,29 @@
+{
+  "text": "sqlpipe v2.0 changes the `/v2/users` response.\n\nBreaking change: The `name` field no longer exists. The API now returns `first_name` and `last_name` as separate fields. Update clients that read `name` before you deploy this version. If a user has one stored name part, sqlpipe returns the value in `first_name` and an empty `last_name`.\n\nThis release adds the `--incremental` flag. Use `--incremental` to process only rows that changed since the last successful run. The flag reduces repeat work for scheduled jobs and large imports.\n\nParquet writes are 40% faster in this release. Jobs that export many Parquet files finish sooner and use less CPU time.",
+  "duration_ms": 19001,
+  "model": "gpt-5.5-medium",
+  "condition": "current",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 104,
+    "sentences": 11,
+    "mean_sentence_words": 9.5,
+    "longest_sentence_words": 19,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

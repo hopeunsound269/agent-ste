@@ -1,0 +1,29 @@
+{
+  "text": "sqlpipe moves rows from Postgres to S3 as Parquet objects. It separates the data path into a reader process, a converter, and an uploader.\n\nThe reader process reads Postgres rows in fixed-size batches. It keeps the database cursor open while downstream components consume each batch. This design limits memory use because sqlpipe stores only the active batch.\n\nThe converter receives each batch and writes it as one Parquet row group. It preserves column order and types from the reader output. The converter emits row groups that the uploader can append to multipart objects.\n\nThe uploader sends each part to S3 with multipart upload. It retries failed part uploads and records the final object after S3 accepts all parts. This pipeline lets the reader, converter, and uploader run continuously with back pressure.",
+  "duration_ms": 20021,
+  "model": "gpt-5.5-medium",
+  "condition": "candidate",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 131,
+    "sentences": 11,
+    "mean_sentence_words": 11.9,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

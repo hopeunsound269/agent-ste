@@ -1,0 +1,29 @@
+{
+  "text": "sqlpipe v2.0 \u2014 Release Notes\n\nBreaking change: The `name` field in `/v2/users` no longer exists. The API now returns two separate fields: `first_name` and `last_name`. If your code reads the `name` field, you must update it before you upgrade. Read `first_name` and `last_name` instead of `name`.\n\nNew flag: `--incremental`. This flag limits a run to rows that changed since the last run. Use this flag on large tables to reduce run time. The flag is optional. By default, sqlpipe runs a full sync.\n\nPerformance: Parquet writes in v2.0 are 40% faster than Parquet writes in v1. The new writer batches rows before it writes them to disk.\n\nIf you use the `name` field in any script, update the script now.",
+  "duration_ms": 13690,
+  "model": "claude-sonnet-5-medium",
+  "condition": "candidate",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 123,
+    "sentences": 15,
+    "mean_sentence_words": 8.1,
+    "longest_sentence_words": 14,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

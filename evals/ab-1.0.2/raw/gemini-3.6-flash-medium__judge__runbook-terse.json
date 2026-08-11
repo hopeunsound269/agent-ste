@@ -1,0 +1,12 @@
+{
+  "model": "gemini-3.6-flash-medium",
+  "scenario": "runbook-terse",
+  "order1_current_first": {
+    "a_score": 10,
+    "b_score": 10
+  },
+  "order2_candidate_first": {
+    "a_score": 10,
+    "b_score": 10
+  }
+}

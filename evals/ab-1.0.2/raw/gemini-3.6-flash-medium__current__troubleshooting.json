@@ -1,0 +1,29 @@
+{
+  "text": "# Troubleshoot `sqlpipe`\n\n## Connection timeouts to PostgreSQL\n\nWhen `sqlpipe` does not connect to PostgreSQL, the network drops the connection after a timeout.\n\nIf a firewall blocks port 5432, open port 5432 in your network rules.\n\nIf the server address is incorrect, update the host value in your database configuration.\n\nIf the database host is behind a VPN, connect to the VPN before you run `sqlpipe`.\n\nIf you use a custom connection timeout, increase the timeout value in the configuration file.\n\n\n## S3 permission errors\n\nWhen `sqlpipe` fails to read or write to S3, AWS returns an access denied error.\n\nIf the AWS credentials are missing, set `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` in your environment.\n\nIf the IAM policy blocks S3 actions, grant the `s3:GetObject` and `s3:PutObject` permissions to your IAM user.\n\nIf the target S3 bucket uses KMS encryption, grant the `kms:GenerateDataKey` permission to the IAM user.\n\nMake sure that the S3 bucket name is correct in your command.",
+  "duration_ms": 28362,
+  "model": "gemini-3.6-flash-medium",
+  "condition": "current",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 147,
+    "sentences": 10,
+    "mean_sentence_words": 14.7,
+    "longest_sentence_words": 17,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

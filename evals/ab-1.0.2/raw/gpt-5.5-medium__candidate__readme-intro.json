@@ -1,0 +1,29 @@
+{
+  "text": "sqlpipe is a CLI tool that copies Postgres tables to S3 as Parquet files. It reads tables from a source database and writes columnar files to the bucket and prefix that you choose. Teams use sqlpipe to move operational data into a data lake, a warehouse staging area, or a backup workflow.\n\nsqlpipe makes each transfer visible. You define the tables, the S3 destination, and the run mode in one configuration file. The tool connects to Postgres, reads each selected table, and writes Parquet output that analytics tools can read. It logs each step so you can see the table, row count, file path, and error.",
+  "duration_ms": 19055,
+  "model": "gpt-5.5-medium",
+  "condition": "candidate",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 106,
+    "sentences": 7,
+    "mean_sentence_words": 15.1,
+    "longest_sentence_words": 19,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

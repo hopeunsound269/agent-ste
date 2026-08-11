@@ -1,0 +1,29 @@
+{
+  "text": "## Troubleshooting\n\n### Postgres connection timeouts\n\nIf sqlpipe cannot connect to Postgres within 30 seconds, it shows a timeout error.\n\nExamine these items:\n\n- Make sure that the Postgres host and port in the configuration are correct.\n- Make sure that the Postgres server accepts connections from your IP address.\n- If a firewall blocks the port, open the port or use a different network path.\n- If the database is under heavy load, increase the timeout value with the `--timeout` flag.\n\n### S3 permission errors\n\nIf sqlpipe shows an \"Access Denied\" error, the AWS credentials do not have the required permissions.\n\nDo this:\n\n- Make sure that the IAM role or user has the `s3:GetObject` and `s3:PutObject` permissions for the bucket.\n- Make sure that the bucket policy does not deny the action.\n- If you use a bucket policy with a prefix, make sure that the object path matches the prefix.\n\nCAUTION: Do not grant `s3:*` to fix a permission error. The wildcard permission gives access to every action on the bucket.",
+  "duration_ms": 18185,
+  "model": "claude-sonnet-5-medium",
+  "condition": "candidate",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 164,
+    "sentences": 13,
+    "mean_sentence_words": 12.0,
+    "longest_sentence_words": 18,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

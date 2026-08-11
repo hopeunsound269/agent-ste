@@ -1,0 +1,12 @@
+{
+  "model": "gemini-3.6-flash-medium",
+  "scenario": "incident-report",
+  "order1_current_first": {
+    "a_score": 9,
+    "b_score": 7
+  },
+  "order2_candidate_first": {
+    "a_score": 9,
+    "b_score": 7
+  }
+}

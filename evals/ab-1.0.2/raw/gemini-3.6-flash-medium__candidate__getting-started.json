@@ -1,0 +1,29 @@
+{
+  "text": "# Getting Started\n\nThis document helps you install, configure, and run `sqlpipe`. Follow these steps to start `sqlpipe` for the first time.\n\n## Prerequisites\n\nBefore you install `sqlpipe`, make sure that `curl` is available on your computer.\n\n## Step 1: Install `sqlpipe`\n\n1. Open your terminal.\n2. Run this command to download and install `sqlpipe`:\n\n```bash\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\n3. Make sure that the installation completed without errors.\n\n## Step 2: Create the configuration file\n\n`sqlpipe` uses a configuration file named `sqlpipe.yaml` to control how data transfers between databases.\n\n1. Create a file named `sqlpipe.yaml` in your working directory.\n2. Open `sqlpipe.yaml` in a text editor.\n3. Add your source database credentials to the file.\n4. Add your target database credentials to the file.\n5. Save the file.\n\n## Step 3: Run `sqlpipe`\n\nWhen your `sqlpipe.yaml` file is ready, you can start `sqlpipe`.\n\n1. Run this command in your terminal:\n\n```bash\nsqlpipe run --config sqlpipe.yaml\n```\n\n2. Read the console output.\n3. Make sure that `sqlpipe` connected to both databases.\n\nIf an error occurs, read the log output in your terminal to find the cause of the error.",
+  "duration_ms": 26561,
+  "model": "gemini-3.6-flash-medium",
+  "condition": "candidate",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 160,
+    "sentences": 17,
+    "mean_sentence_words": 8.8,
+    "longest_sentence_words": 18,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

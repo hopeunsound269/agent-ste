@@ -1,0 +1,29 @@
+{
+  "text": "# sqlpipe v2.0 Release Notes\n\nWe released `sqlpipe` v2.0. This version includes breaking changes, new features, and speed improvements.\n\n## Breaking Changes\n\n- The `/v2/users` endpoint no longer contains the `name` field.\n- We split the `name` field into `first_name` and `last_name`.\n- If you query `/v2/users`, you must update your code to use `first_name` and `last_name`.\n- If you send the `name` field in a request, the API returns an error.\n\n## New Features\n\n- We added the `--incremental` flag to the command-line tool.\n- When you export data, you can use the `--incremental` flag.\n- If you set the `--incremental` flag, `sqlpipe` processes only new data records.\n\n## Performance Improvements\n\n- Parquet file writes are 40% faster in v2.0.\n- We optimized memory allocations in the Parquet exporter.\n- Because we optimized memory allocations, you can write large files faster.",
+  "duration_ms": 36457,
+  "model": "gemini-3.6-flash-medium",
+  "condition": "current",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 131,
+    "sentences": 12,
+    "mean_sentence_words": 10.1,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

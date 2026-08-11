@@ -1,0 +1,29 @@
+{
+  "text": "`sqlpipe` is a tool that transfers data from a `Postgres` database to `S3` storage. The system uses three worker components in a continuous data pipeline. First, a reader process streams `Postgres` database rows in data batches to memory.\n\nSecond, a converter process receives the data batches from memory. The converter process turns the data batches into `Parquet` row groups. Third, an uploader process receives the `Parquet` row groups from the converter process. The uploader process writes multipart objects to `S3`.\n\nIf an upload request fails, the uploader process retries the upload request. Each component operates independently in sequence to move data without disk bottlenecks. This architecture keeps memory consumption low during large data transfers. Users can run `sqlpipe` to move large tables from `Postgres` to `S3` in `Parquet` format.",
+  "duration_ms": 46406,
+  "model": "gemini-3.6-flash-medium",
+  "condition": "candidate",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 130,
+    "sentences": 11,
+    "mean_sentence_words": 11.8,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

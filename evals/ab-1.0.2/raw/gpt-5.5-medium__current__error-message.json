@@ -1,0 +1,29 @@
+{
+  "text": "S3 upload failed: AccessDenied.\nThe IAM credentials lack `s3:PutObject` for the target object.\nGrant `s3:PutObject` on the bucket and object prefix.\nRun sqlpipe again.",
+  "duration_ms": 16127,
+  "model": "gpt-5.5-medium",
+  "condition": "current",
+  "scenario": "error-message",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 24,
+    "sentences": 4,
+    "mean_sentence_words": 5.8,
+    "longest_sentence_words": 9,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

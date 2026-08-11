@@ -1,0 +1,29 @@
+{
+  "text": "sqlpipe is a command-line tool. It reads tables from a Postgres database and writes the data to S3 as Parquet files. sqlpipe supports full syncs and incremental syncs. In a full sync, sqlpipe reads the entire table and writes one or more Parquet files. In an incremental sync, sqlpipe reads only the rows that changed since the last run and appends new Parquet files to the same S3 path.\n\nYou can run sqlpipe from the command line or from a scheduler such as cron. sqlpipe reads its configuration from a file or from environment variables. If a sync fails, sqlpipe writes an error message to the log and exits with a non-zero status code.",
+  "duration_ms": 14762,
+  "model": "claude-sonnet-5-medium",
+  "condition": "current",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 114,
+    "sentences": 8,
+    "mean_sentence_words": 14.2,
+    "longest_sentence_words": 25,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

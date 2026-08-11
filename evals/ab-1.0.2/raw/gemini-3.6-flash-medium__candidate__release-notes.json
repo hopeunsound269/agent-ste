@@ -1,0 +1,29 @@
+{
+  "text": "# sqlpipe v2.0 Release Notes\n\nsqlpipe v2.0 is now available. This release contains one breaking change, one new flag, and one performance update.\n\n## Breaking Change\n\nThe `/v2/users` endpoint no longer contains the `name` field. The API now splits the `name` field into `first_name` and `last_name`. If you use the `/v2/users` endpoint, you must update your client code to read `first_name` and `last_name`.\n\n## New Flag\n\nsqlpipe v2.0 adds the `--incremental` flag. You can use the `--incremental` flag to process only new records or modified records.\n\n## Performance Update\n\nParquet writes are 40% faster than in sqlpipe v1.0. The file writer writes Parquet data faster because it uses a new memory layout.",
+  "duration_ms": 31899,
+  "model": "gemini-3.6-flash-medium",
+  "condition": "candidate",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 100,
+    "sentences": 9,
+    "mean_sentence_words": 11.1,
+    "longest_sentence_words": 18,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

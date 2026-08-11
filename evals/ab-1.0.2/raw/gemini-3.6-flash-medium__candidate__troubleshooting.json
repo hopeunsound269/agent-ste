@@ -1,0 +1,29 @@
+{
+  "text": "# Troubleshooting\n\n## Postgres Connection Timeouts\n\nIf `sqlpipe` times out during a Postgres connection, read the network logs.\n\nIf a firewall blocks port `5432`, update the firewall rules to allow traffic.\n\nIf you connect across a virtual private network, make sure that the network connection is active.\n\nIf the target database host is slow, open the `sqlpipe` config file.\n\nTo extend the wait time, increase the `PG_TIMEOUT` value in the config file.\n\nIf the target database exceeds maximum connections, restart inactive database sessions.\n\nIf the problem continues, test the connection with `pg_isready`.\n\n## S3 Permission Errors\n\nIf `sqlpipe` shows an S3 permission error, read the AWS identity config.\n\nIf the S3 bucket policy denies access, grant the `s3:PutObject` permission to your IAM role.\n\nIf you read data from S3, grant the `s3:GetObject` permission to your IAM role.\n\nIf your IAM policy uses explicit denial rules, remove the denial rules for the target bucket.\n\nIf you use temporary AWS credentials, make sure that the session token is active.\n\nIf the bucket uses AWS KMS encryption, grant the `kms:GenerateDataKey` permission to your role.\n\nTo test your access permissions, run the `aws s3 ls` command against the target bucket.",
+  "duration_ms": 35422,
+  "model": "gemini-3.6-flash-medium",
+  "condition": "candidate",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 186,
+    "sentences": 14,
+    "mean_sentence_words": 13.3,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

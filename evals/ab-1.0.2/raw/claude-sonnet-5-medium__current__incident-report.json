@@ -1,0 +1,29 @@
+{
+  "text": "Incident Report: Elevated 502 Errors\n\nBetween 14:02 and 14:31 UTC, 12% of API requests failed with HTTP 502 errors. A deploy removed the cache warmup step from the release process. This step fills the cache before the system sends live traffic to it. Without this step, the cache was empty when requests arrived. The empty cache caused the failed requests. The team identified the cause and reverted the deploy at 14:27 UTC. The error rate returned to normal by 14:31 UTC. Total impact time was 29 minutes. The team will add an automated check for the cache warmup step to the deploy process to prevent a repeat of this problem.",
+  "duration_ms": 19692,
+  "model": "claude-sonnet-5-medium",
+  "condition": "current",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 110,
+    "sentences": 10,
+    "mean_sentence_words": 11.0,
+    "longest_sentence_words": 23,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.91
+  }
+}

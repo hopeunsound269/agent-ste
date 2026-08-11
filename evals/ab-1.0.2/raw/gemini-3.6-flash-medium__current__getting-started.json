@@ -1,0 +1,29 @@
+{
+  "text": "# Getting Started\n\nThe `sqlpipe` tool moves data between database systems. This section explains how to install, configure, and run `sqlpipe`.\n\n## Prerequisites\n\nBefore you install the tool, make sure that you have access to a terminal. Make sure that you have permissions to execute shell scripts.\n\n## Installation\n\nTo install `sqlpipe`, run the installer script in your terminal:\n\n```bash\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nThe script downloads the binary file. The script copies the binary file to your system path.\n\n## Configuration\n\nThe tool uses a YAML configuration file to connect to your databases.\n\n1. Create a file with the name `sqlpipe.yaml` in your working directory.\n2. Open the `sqlpipe.yaml` file in a text editor.\n3. Add your source database connection details to the file.\n4. Add your target database connection details to the file.\n5. Save the file.\n\nMake sure that the file permissions allow `sqlpipe` to read the configuration file.\n\n## First Run\n\nIf you want to transfer data, execute the run command with your configuration file:\n\n```bash\nsqlpipe run --config sqlpipe.yaml\n```\n\nThe tool reads the `sqlpipe.yaml` configuration file. The tool tests the database connections. The tool transfers the data to the target database.\n\nWhen the transfer completes, `sqlpipe` shows a summary message in the terminal.",
+  "duration_ms": 28949,
+  "model": "gemini-3.6-flash-medium",
+  "condition": "current",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 188,
+    "sentences": 19,
+    "mean_sentence_words": 9.6,
+    "longest_sentence_words": 14,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "text": "sqlpipe v2.0 release notes\n\nThis release changes the `/v2/users` endpoint. The endpoint no longer returns a `name` field. The endpoint now returns a `first_name` field and a `last_name` field. This change is a breaking change. If your code reads the `name` field, update your code before you upgrade to v2.0.\n\nVersion 2.0 adds a new flag: `--incremental`. If you set the `--incremental` flag, sqlpipe copies only new rows and changed rows. If you do not set the flag, sqlpipe copies all rows.\n\nVersion 2.0 writes Parquet files 40% faster than version 1.0. The faster write speed applies to all Parquet output in this version.",
+  "duration_ms": 15589,
+  "model": "claude-sonnet-5-medium",
+  "condition": "current",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 105,
+    "sentences": 11,
+    "mean_sentence_words": 9.5,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

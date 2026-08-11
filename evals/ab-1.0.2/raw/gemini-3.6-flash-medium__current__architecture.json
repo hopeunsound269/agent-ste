@@ -1,0 +1,29 @@
+{
+  "text": "sqlpipe is a software tool that transfers data from Postgres to S3. The tool uses three internal processes to transfer the data.\n\nFirst, a reader process connects to the Postgres database. The reader process reads rows from Postgres in batches. The reader process streams these batches to a converter process.\n\nSecond, the converter process receives the row batches from the reader process. The converter process turns each batch into a Parquet row group. The converter process sends the Parquet row groups to an uploader process.\n\nThird, the uploader process receives the Parquet row groups. The uploader process writes the row groups to S3 as multipart objects. If an upload error occurs, the uploader process retries the operation. When all parts arrive, the uploader process completes the multipart object. This pipeline processes data in memory without temporary files on disk.",
+  "duration_ms": 32963,
+  "model": "gemini-3.6-flash-medium",
+  "condition": "current",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 139,
+    "sentences": 13,
+    "mean_sentence_words": 10.7,
+    "longest_sentence_words": 12,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

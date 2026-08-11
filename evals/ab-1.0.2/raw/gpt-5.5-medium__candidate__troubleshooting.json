@@ -1,0 +1,29 @@
+{
+  "text": "## Troubleshooting\n\nUse these steps when sqlpipe cannot connect to Postgres or cannot write to S3.\n\n### Postgres Connection Timeouts\n\nMake sure that the host name and port point to the correct Postgres server.\n\nMake sure that the database accepts traffic from your IP address.\n\nIf you use a VPN, connect to the VPN before you run sqlpipe.\n\nIf the server uses TLS, set the TLS option that your Postgres driver needs.\n\nRun `psql` with the same host, port, user, and database.\n\nIf `psql` fails, fix the database connection before you run sqlpipe again.\n\n### S3 Permission Errors\n\nMake sure that the AWS identity can read the source bucket.\n\nMake sure that the AWS identity can write to the target bucket.\n\nIf sqlpipe uses an IAM role, make sure that the session uses that role.\n\nIf the bucket uses SSE-KMS, give the identity access to the KMS key.\n\nRun the command again after the permission change reaches AWS.",
+  "duration_ms": 17855,
+  "model": "gpt-5.5-medium",
+  "condition": "candidate",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 148,
+    "sentences": 12,
+    "mean_sentence_words": 12.3,
+    "longest_sentence_words": 14,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.68
+  }
+}

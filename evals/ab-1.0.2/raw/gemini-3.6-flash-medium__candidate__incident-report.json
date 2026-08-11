@@ -1,0 +1,29 @@
+{
+  "text": "Between 14:02 UTC and 14:31 UTC, 12% of API requests failed with HTTP 502 errors. A software deployment removed the cache warmup step at 14:02 UTC. The missing cache warmup step caused server errors on API routes.\n\nEngineers identified the problem and reverted the deployment at 14:27 UTC. The system created new cache entries and restored normal operation at 14:31 UTC. All API endpoints now process requests normally without errors.\n\nWe updated our deployment pipeline to prevent similar incidents. The deployment pipeline now requires the cache warmup step before a deployment can start.",
+  "duration_ms": 24099,
+  "model": "gemini-3.6-flash-medium",
+  "condition": "candidate",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 93,
+    "sentences": 8,
+    "mean_sentence_words": 11.6,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

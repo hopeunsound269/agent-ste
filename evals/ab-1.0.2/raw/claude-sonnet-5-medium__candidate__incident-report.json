@@ -1,0 +1,29 @@
+{
+  "text": "Between 14:02 and 14:31 UTC, the API returned HTTP 502 errors for 12% of requests. A deploy removed the cache warmup step from the deploy process. The missing step caused the errors. Automated monitoring detected the errors at 14:04 UTC. The team reverted the deploy at 14:27 UTC. The API returned to normal operation at 14:31 UTC. The incident lasted 29 minutes. Users must retry any failed requests from that period. The team will add a check for the cache warmup step to the deploy process. This check will prevent the same problem in the future.",
+  "duration_ms": 23050,
+  "model": "claude-sonnet-5-medium",
+  "condition": "candidate",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 96,
+    "sentences": 10,
+    "mean_sentence_words": 9.6,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "text": "Getting Started\n\nFollow these steps to install and run sqlpipe.\n\n1. Install sqlpipe. Run this command: `curl -sSL https://get.sqlpipe.dev | sh`\n2. Create a file named `sqlpipe.yaml` in your project folder.\n3. Add your configuration to `sqlpipe.yaml`. The configuration defines your data sources and your pipeline.\n4. Start sqlpipe. Run this command: `sqlpipe run --config sqlpipe.yaml`\n\nIf the installation script fails, make sure that your network connection works, then run the command again.\n\nIf `sqlpipe.yaml` does not exist, sqlpipe stops and shows an error that names the missing file.\n\nIf a required field is missing from `sqlpipe.yaml`, sqlpipe stops and shows an error that names the field.\n\nAfter sqlpipe starts, it reads the configuration in `sqlpipe.yaml` and runs the pipeline that you defined. Sqlpipe shows progress in the terminal while the pipeline runs. When the pipeline finishes, sqlpipe shows a summary and exits with a zero status code.",
+  "duration_ms": 21010,
+  "model": "claude-sonnet-5-medium",
+  "condition": "candidate",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 143,
+    "sentences": 14,
+    "mean_sentence_words": 9.9,
+    "longest_sentence_words": 19,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

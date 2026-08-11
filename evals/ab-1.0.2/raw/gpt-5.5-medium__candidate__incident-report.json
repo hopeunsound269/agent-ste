@@ -1,0 +1,29 @@
+{
+  "text": "Incident report\n\nBetween 14:02 and 14:31 UTC, 12% of API requests failed with HTTP 502 errors.\n\nA deploy removed the cache warmup step. New API workers then received traffic before they loaded required cache data. Some requests reached workers that did not contain this data and returned HTTP 502.\n\nWe reverted the deploy at 14:27 UTC. Error rates returned to normal at 14:31 UTC.\n\nImpact was limited to API requests during the incident window. No customer data loss occurred. We will add a release test for the cache warmup step. We will block deploys that remove this step.",
+  "duration_ms": 14453,
+  "model": "gpt-5.5-medium",
+  "condition": "candidate",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 98,
+    "sentences": 10,
+    "mean_sentence_words": 9.8,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

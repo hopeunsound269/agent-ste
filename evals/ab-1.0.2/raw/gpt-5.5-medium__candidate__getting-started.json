@@ -1,0 +1,29 @@
+{
+  "text": "## Getting Started\n\nMake sure that you can use `sh` and `curl` on your workstation.\n\nInstall sqlpipe:\n\n```sh\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nCreate `sqlpipe.yaml` in your project directory.\n\nAdd these records to `sqlpipe.yaml`:\n\n- A source.\n- A target.\n- A pipeline.\n\nSet the source connection value.\n\nSet the target connection value.\n\nSet the table or query that the pipeline uses.\n\nSave `sqlpipe.yaml`.\n\nRun sqlpipe:\n\n```sh\nsqlpipe run --config sqlpipe.yaml\n```\n\nsqlpipe reads `sqlpipe.yaml`.\n\nsqlpipe runs each pipeline in the file.\n\nsqlpipe shows progress in the terminal.\n\nIf the run fails, read the error message.\n\nFix the value that the message names.\n\nRun the command again.",
+  "duration_ms": 26464,
+  "model": "gpt-5.5-medium",
+  "condition": "candidate",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 95,
+    "sentences": 18,
+    "mean_sentence_words": 5.1,
+    "longest_sentence_words": 12,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

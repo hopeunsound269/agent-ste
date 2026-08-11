@@ -1,0 +1,29 @@
+{
+  "text": "## Getting started\n\nInstall sqlpipe with this command:\n\n```\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nThe command downloads sqlpipe and installs it on your system.\n\nNext, create a configuration file named `sqlpipe.yaml` in your project directory. The file must define your data source, your destination, and the fields that you want to transfer.\n\nFollow these steps to build the file:\n\n1. Create the file `sqlpipe.yaml`.\n2. Add configuration for your data source.\n3. Add configuration for your destination.\n4. Save the file.\n\nAfter you save the file, run this command to start your first job:\n\n```\nsqlpipe run --config sqlpipe.yaml\n```\n\nIf sqlpipe finds an error in the configuration, it prints the error and stops. Fix the error and run the command again.\n\nIf the configuration is correct, sqlpipe starts the transfer and shows the progress. When the transfer ends, sqlpipe prints a summary of the rows that it moved.",
+  "duration_ms": 21758,
+  "model": "claude-sonnet-5-medium",
+  "condition": "current",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 135,
+    "sentences": 14,
+    "mean_sentence_words": 9.4,
+    "longest_sentence_words": 17,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

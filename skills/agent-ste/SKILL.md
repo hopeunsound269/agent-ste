@@ -1,6 +1,6 @@
 ---
 name: agent-ste
-version: 1.0.1
+version: 1.0.2
 description: |
   Write or rewrite technical and agent-facing text in ASD-STE100 Simplified
   Technical English. Use for documentation, READMEs, runbooks, error messages,
@@ -61,6 +61,7 @@ A "Getting started" section is procedural. An architecture overview is descripti
 - **No semicolons.** Write two sentences.
 - **No contractions.** Write "do not", "it is", "you are".
 - **No Latin abbreviations.** Write "for example", not "e.g.". Write "that is", not "i.e.". Name the items instead of "etc.".
+- **No idioms, no metaphors, no figurative language.** Write the fact. A reader who does not know the idiom reads only the words: "this feature is a home run" tells a non-native reader nothing.
 - **Warnings and cautions: command first, risk second.** "CAUTION: Do not use `--force` against production. The flag deletes rows that do not match the source." Never bury the command after the explanation.
 - **Word counting:** numbers, numbers with units, code spans, identifiers, quoted strings, and proper nouns each count as one word. Long identifiers do not use up your sentence budget.
 
@@ -88,7 +89,9 @@ One word, one meaning, one part of speech, for the whole document. The official 
 
 Delete these words everywhere — they carry no fact: simply, just, easily, seamlessly, effortlessly, robust, powerful, comprehensive, performant, blazingly, streamlined, crucial, pivotal, state-of-the-art, "it is worth noting that", "it is important to". If the word hides a real property, state the property with a number instead.
 
-Domain words are legal. "Webhook", "idempotent", "Parquet", "multipart upload" are technical names. Use each one consistently and do not turn it into a verb unless it is an accepted technical verb ("deploy", "compile", "merge").
+Use the short everyday word when it has the same meaning: "start", not "commence". "End", not "terminate". "Buy", not "purchase". "About", not "approximately".
+
+Domain words are legal. "Webhook", "idempotent", "Parquet", "multipart upload" are technical names. Use each one consistently and do not turn it into a verb unless it is an accepted technical verb ("deploy", "compile", "merge"). When you rewrite text, do not delete a technical term that the meaning needs. If a necessary term breaks a rule, keep the term and flag the exception.
 
 ## Agent-facing text
 

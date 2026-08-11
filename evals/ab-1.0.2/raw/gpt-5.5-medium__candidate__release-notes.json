@@ -1,0 +1,29 @@
+{
+  "text": "sqlpipe v2.0 is available.\n\nBreaking change: The `/v2/users` response no longer includes `name`.\nThe response now includes `first_name` and `last_name`.\nIf your client reads `name`, update it before you deploy v2.0.\nIf a client still reads `name`, the client will receive no value for that field.\n\nThis release adds the `--incremental` flag.\nUse `--incremental` to process only rows that changed since the last run.\nThis mode reduces work for repeat sync jobs.\n\nParquet writes are 40% faster in v2.0.\nLarge exports finish sooner, and pipelines spend less time in the write step.\nNo schema change is required for Parquet output.",
+  "duration_ms": 19000,
+  "model": "gpt-5.5-medium",
+  "condition": "candidate",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 104,
+    "sentences": 12,
+    "mean_sentence_words": 8.7,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

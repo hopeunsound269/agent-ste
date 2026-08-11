@@ -157,7 +157,7 @@ python3 evals/run_bench.py --judge     # blind pairwise judge pass
 
 **Why not prompt "write clearly"?** "Clearly" is an opinion. "No sentence over 20 words" is a test that the writer can run. The final gate turns every rule into a search.
 
-**What does the skill cost in tokens?** At rest, your agent loads only the description: about 100 tokens. On activation, the full skill loads: about 2,200 tokens, half the size of the most popular STE skill. The prompt fallbacks cost about 230 and 60 tokens.
+**What does the skill cost in tokens?** At rest, your agent loads only the description: about 100 tokens. On activation, the full skill loads: about 2,400 tokens, half the size of the most popular STE skill. The prompt fallbacks cost about 230 and 60 tokens.
 
 **Will my docs sound flat?** Yes, and that is the point. Keep your voice for your blog. Do not apply STE to marketing text.
 
