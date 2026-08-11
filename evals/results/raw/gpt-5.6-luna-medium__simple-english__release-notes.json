@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe v2.0 includes a breaking change to the `/v2/users` endpoint.\n\nUpdate clients that read the `name` field before you upgrade. The endpoint now returns `first_name` and `last_name` instead of `name`. Clients that use `name` can stop working after the upgrade.\n\nUse the new `--incremental` flag to transfer only new or changed records. This flag reduces transfer time for repeated operations.\n\nParquet writes are now 40% faster. This improvement applies to Parquet output created by sqlpipe v2.0.\n\nRead the migration guide before you upgrade. Make sure that each client uses the new field names. Test the migration in a non-production environment. Then upgrade sqlpipe and deploy the updated clients.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 12084,
+  "cost_usd": null,
+  "model": "gpt-5.6-luna-medium",
+  "condition": "simple-english",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 109,
+    "sentences": 12,
+    "mean_sentence_words": 9.1,
+    "longest_sentence_words": 12,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

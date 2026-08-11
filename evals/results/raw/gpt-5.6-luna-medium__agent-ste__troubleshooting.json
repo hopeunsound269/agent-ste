@@ -1,0 +1,32 @@
+{
+  "text": "## Troubleshooting\n\n### Connection timeout to Postgres\n\nIf `sqlpipe` reports a connection timeout, read the host, port, and database values in the configuration.\n\nMake sure that the Postgres server accepts network connections from the `sqlpipe` host.\n\nMake sure that the firewall permits traffic to the Postgres port.\n\nRun `sqlpipe ping --target postgres` from the same host.\n\nIf the command fails, test the port with `nc -vz HOST PORT`.\n\nUse the exact host and port from the configuration.\n\n### S3 permission error\n\nIf `sqlpipe` reports an S3 permission error, read the bucket name and region in the configuration.\n\nMake sure that the access key belongs to the expected account.\n\nMake sure that the IAM policy permits the required bucket actions.\n\nGrant `s3:ListBucket` for bucket listing.\n\nGrant `s3:GetObject` for reads.\n\nGrant `s3:PutObject` for writes.\n\nMake sure that the bucket policy permits the same actions.\n\nRun `sqlpipe upload <file>` with a test object.\n\nIf the upload fails, read the full error and request the missing action from the account owner.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 16363,
+  "cost_usd": null,
+  "model": "gpt-5.6-luna-medium",
+  "condition": "agent-ste",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 149,
+    "sentences": 15,
+    "mean_sentence_words": 9.9,
+    "longest_sentence_words": 17,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

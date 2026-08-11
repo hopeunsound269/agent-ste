@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe is organized as a three-stage streaming pipeline that decouples database reads, columnar conversion, and object storage. A dedicated reader process opens a PostgreSQL cursor and fetches rows in bounded batches, providing backpressure-aware input without loading the full result set into memory. The converter consumes each batch, maps PostgreSQL values to a stable Parquet schema, and accumulates column data into appropriately sized row groups. Completed groups are passed to the uploader, which serializes them into an S3 multipart upload so large outputs can be transferred incrementally. Parts are uploaded with bounded concurrency, retry policies, and exponential backoff for transient failures. Stage boundaries use bounded queues to isolate throughput differences and cap memory usage. On completion, the uploader finalizes the multipart object; on unrecoverable errors, it aborts the upload and surfaces failure.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 18074,
+  "cost_usd": null,
+  "model": "gpt-5.6-sol-medium",
+  "condition": "baseline",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 131,
+    "sentences": 7,
+    "mean_sentence_words": 18.7,
+    "longest_sentence_words": 25,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 1,
+      "semicolon": 1,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 2,
+    "violations_per_100w": 1.53
+  }
+}

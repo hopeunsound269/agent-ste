@@ -1,0 +1,32 @@
+{
+  "text": "Incident report: API errors between 14:02 and 14:31 UTC\n\nAt 14:02 UTC, a deploy removed the cache warmup step from the API. This change caused HTTP 502 errors for some requests. Twelve percent of API requests failed during the incident.\n\nAt 14:27 UTC, the team reverted the deploy. The API returned to normal operation at 14:31 UTC.\n\nThe team will add a check for the cache warmup step to the deploy process. This check will stop a deploy if the cache warmup step is missing.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 16932,
+  "cost_usd": null,
+  "model": "claude-sonnet-5-medium",
+  "condition": "agent-ste",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 85,
+    "sentences": 8,
+    "mean_sentence_words": 10.6,
+    "longest_sentence_words": 20,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 1.18
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "text": "Sqlpipe has three pipeline components that move rows from Postgres to Parquet objects in S3. The reader process streams query rows from Postgres and groups the rows into batches. Each batch moves to the converter without waiting for the complete query result. This flow limits the source data that each pipeline stage handles at one time.\n\nThe converter maps each batch to Parquet columns. It writes the mapped data as one or more Parquet row groups.\n\nThe uploader starts a multipart object in S3 and sends the object as separate parts. It records each successful part and retries a part after an upload error. If retries do not succeed, the uploader reports the error and stops the multipart upload. The pipeline applies backpressure so slow conversion or upload work does not cause unlimited memory use.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 26647,
+  "cost_usd": null,
+  "model": "gpt-5.6-sol-medium",
+  "condition": "agent-ste",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 135,
+    "sentences": 10,
+    "mean_sentence_words": 13.5,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

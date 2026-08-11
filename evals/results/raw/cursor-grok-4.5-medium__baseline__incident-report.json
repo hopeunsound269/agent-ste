@@ -1,0 +1,32 @@
+{
+  "text": "On August 11, between 14:02 and 14:31 UTC, approximately 12% of API requests failed with HTTP 502 errors. The issue began after a deploy that removed the cache warmup step, leaving some backends unprepared to serve traffic. At 14:27 UTC we reverted the deploy, restoring the previous configuration. Error rates returned to normal by 14:31 UTC. No data loss occurred. We are reinstating cache warmup in our deploy process and adding checks to catch similar gaps before release. We apologize for the disruption.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 16008,
+  "cost_usd": null,
+  "model": "cursor-grok-4.5-medium",
+  "condition": "baseline",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 83,
+    "sentences": 7,
+    "mean_sentence_words": 11.9,
+    "longest_sentence_words": 19,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

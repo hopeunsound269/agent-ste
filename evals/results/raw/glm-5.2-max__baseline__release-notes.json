@@ -1,0 +1,32 @@
+{
+  "text": "# sqlpipe v2.0\n\nThis major release redesigns the user model, adds a resumable sync mode, and significantly speeds up Parquet output.\n\n## Breaking changes\nThe `name` field on `/v2/users` has been split into `first_name` and `last_name`. Update any clients that read or write `name` to use the two new fields instead. Existing records require a one-time migration to populate the split fields.\n\n## New features\n- `--incremental` flag for resumable syncs that pick up where the last run left off \u2014 ideal for large or recurring transfers.\n\n## Performance\n- Parquet writes are now ~40% faster thanks to an improved column encoder and buffered flushing.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 12105,
+  "cost_usd": null,
+  "model": "glm-5.2-max",
+  "condition": "baseline",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 95,
+    "sentences": 6,
+    "mean_sentence_words": 15.5,
+    "longest_sentence_words": 21,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 1,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 1.05
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "text": "# sqlpipe v2.0 Release Notes\n\n**Breaking Change:** The `name` field on `/v2/users` has been split into two separate fields, `first_name` and `last_name`. Any integrations that read or write the old `name` field must be updated to use the new fields before upgrading. Responses will no longer include `name`.\n\n**New Feature:** Added the `--incremental` flag, allowing pipelines to process only new or changed records since the last run rather than reprocessing entire datasets. This significantly reduces runtime and resource usage for recurring syncs.\n\n**Performance:** Parquet writes are now up to 40% faster, thanks to optimizations in our serialization and buffering layer. Existing Parquet workflows benefit automatically with no configuration changes required.\n\nUpgrade carefully and review the breaking change above before deploying.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 12770,
+  "cost_usd": null,
+  "model": "claude-opus-4-8-medium",
+  "condition": "baseline",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 117,
+    "sentences": 8,
+    "mean_sentence_words": 14.6,
+    "longest_sentence_words": 24,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 1,
+      "ing_clause": 1,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 2,
+    "violations_per_100w": 1.71
+  }
+}

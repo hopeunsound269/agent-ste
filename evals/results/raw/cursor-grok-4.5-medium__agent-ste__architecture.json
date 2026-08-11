@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe is a pipeline that moves data from Postgres to S3. The pipeline has three stages: a reader, a converter, and an uploader.\n\nThe reader process streams Postgres rows in batches. The reader reads rows from a Postgres query. The reader groups the rows into batches of fixed size. The reader sends each batch to the converter.\n\nThe converter turns each batch into a Parquet row group. The converter maps Postgres column types to Parquet types. The converter writes one Parquet row group for each batch.\n\nThe uploader writes multipart objects to S3. The uploader sends each Parquet row group as part of a multipart upload. If a part write fails, the uploader retries that part. The uploader completes the multipart object after all parts succeed.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 24410,
+  "cost_usd": null,
+  "model": "cursor-grok-4.5-medium",
+  "condition": "agent-ste",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 126,
+    "sentences": 14,
+    "mean_sentence_words": 9.0,
+    "longest_sentence_words": 13,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

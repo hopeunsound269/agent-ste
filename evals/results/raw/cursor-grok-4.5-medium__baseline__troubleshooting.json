@@ -1,0 +1,32 @@
+{
+  "text": "## Troubleshooting\n\n### Postgres connection timeouts\n\nIf sqlpipe fails with connection timeout errors when reaching Postgres, confirm the host, port, and that the database accepts remote connections. Check that your IP is allowed in `pg_hba.conf` or the cloud security group, and that a firewall or VPN is not blocking traffic. Increase the client timeout with `--connect-timeout` (seconds) if the network is slow. Verify TLS settings match the server (`sslmode`) and that DNS resolves correctly. A quick `psql` or `nc -vz host 5432` check isolates whether the issue is sqlpipe-specific or network-wide.\n\n### S3 permission errors\n\nAccessDenied or similar S3 errors usually mean the credentials lack `s3:GetObject`, `s3:PutObject`, or `s3:ListBucket` on the target bucket/prefix. Confirm `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` (or the instance/role profile) are set for the intended account, and that the bucket region matches `--region`. For KMS-encrypted buckets, the role also needs `kms:Decrypt` / `kms:GenerateDataKey`. Re-check the bucket policy and object ACLs if IAM looks correct but uploads or downloads still fail.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 15209,
+  "cost_usd": null,
+  "model": "cursor-grok-4.5-medium",
+  "condition": "baseline",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 154,
+    "sentences": 9,
+    "mean_sentence_words": 17.1,
+    "longest_sentence_words": 23,
+    "violations": {
+      "sentence_over_limit": 3,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 2,
+      "synonym_rotation": 2
+    },
+    "violations_total": 7,
+    "violations_per_100w": 4.55
+  }
+}

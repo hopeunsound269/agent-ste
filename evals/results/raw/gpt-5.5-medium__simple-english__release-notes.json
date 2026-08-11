@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe v2.0 includes one breaking API change, one new load option, and faster Parquet output.\n\nWARNING: Update clients that read `name` from `/v2/users`. Version 2.0 removes `name` and returns `first_name` and `last_name` instead.\n\nUse `--incremental` to copy only new or changed rows after the first load. This flag helps recurring jobs finish faster and reduces database load.\n\nParquet writes are 40% faster in this release. Large exports spend less time in file creation and compression. As a result, batch jobs that write Parquet files can finish sooner.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 17187,
+  "cost_usd": null,
+  "model": "gpt-5.5-medium",
+  "condition": "simple-english",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 88,
+    "sentences": 8,
+    "mean_sentence_words": 10.9,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

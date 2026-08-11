@@ -1,0 +1,32 @@
+{
+  "text": "# Getting Started with sqlpipe\n\n`sqlpipe` moves data between databases. Follow these steps to install, configure, and run `sqlpipe`.\n\n## Step 1: Install sqlpipe\n\nRun the installation command in your terminal:\n\n```bash\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nIf the installation finishes, the `sqlpipe` binary sits in your system path.\n\n## Step 2: Configure sqlpipe\n\n`sqlpipe` reads connection information from a configuration file.\n\n1. Create a file named `sqlpipe.yaml` in your working directory.\n2. Open `sqlpipe.yaml` in a text editor.\n3. Add the connection settings for your source database to `sqlpipe.yaml`.\n4. Add the connection settings for your target database to `sqlpipe.yaml`.\n5. Make sure that all database credentials are correct before you run `sqlpipe`.\n\nIf you need a template, read the sample configuration file on the documentation website.\n\n## Step 3: Run sqlpipe\n\nRun `sqlpipe` with your configuration file:\n\n```bash\nsqlpipe run --config sqlpipe.yaml\n```\n\n`sqlpipe` connects to your source database and target database. The tool transfers data between the two systems.\n\nIf `sqlpipe` finds a connection error, `sqlpipe` shows the error message in the terminal. If the transfer succeeds, `sqlpipe` shows the total count of transferred rows.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 33532,
+  "cost_usd": null,
+  "model": "gemini-3.6-flash-medium",
+  "condition": "agent-ste",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 160,
+    "sentences": 16,
+    "mean_sentence_words": 9.7,
+    "longest_sentence_words": 14,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 1
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.62
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "text": "# sqlpipe v2.0\n\nsqlpipe v2.0 adds incremental processing and increases Parquet write speed. This release also changes the user response format.\n\n## Breaking API change\n\nThe `/v2/users` response replaces the `name` field with `first_name` and `last_name`. The API does not return `name` in version 2. Clients that read `name` require an update.\n\nUpdate each client to read `first_name` and `last_name`. When a client requires a full name, combine both fields. Test the updated client before you use the version 2 API.\n\n## Incremental processing\n\nThe new `--incremental` flag processes new or changed data without a complete reload.\n\nUse this flag for incremental pipeline runs.\n\n## Parquet performance\n\nParquet writes are 40% faster in sqlpipe v2.0. This improvement reduces the write time for Parquet output.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 43320,
+  "cost_usd": null,
+  "model": "gpt-5.6-sol-medium",
+  "condition": "agent-ste",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 113,
+    "sentences": 12,
+    "mean_sentence_words": 9.4,
+    "longest_sentence_words": 13,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

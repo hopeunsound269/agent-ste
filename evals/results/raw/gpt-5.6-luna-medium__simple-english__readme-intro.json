@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe syncs PostgreSQL tables to Amazon S3 as Parquet files. It transfers data from a source database to an S3 destination. Each sync writes partitioned Parquet files for analytics workflows and cloud storage. sqlpipe can copy complete tables or transfer only rows that changed since the previous sync. It uses table keys and timestamps to identify new or changed rows. The tool keeps source data in PostgreSQL and does not require changes to the source schema.\n\nA sqlpipe job defines the source database, destination bucket, table list, and sync behavior. The CLI reports progress and records errors for each table. Teams can schedule jobs with cron, CI systems, or other workflow tools. The resulting Parquet files work with data lakes, query engines, and batch processing systems. sqlpipe provides a direct path from operational PostgreSQL data to durable, queryable storage in S3.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 15833,
+  "cost_usd": null,
+  "model": "gpt-5.6-luna-medium",
+  "condition": "simple-english",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 141,
+    "sentences": 11,
+    "mean_sentence_words": 12.8,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

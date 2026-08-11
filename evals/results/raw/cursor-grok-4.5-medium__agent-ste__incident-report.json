@@ -1,0 +1,32 @@
+{
+  "text": "Between 14:02 and 14:31 UTC, 12% of API requests failed with HTTP 502.\n\nA deploy removed the cache warmup step before the service started. The missing warmup left the cache empty at startup. Empty cache entries caused the upstream service to reject requests. The API then returned HTTP 502 to clients.\n\nWe identified the deploy as the cause. We reverted the deploy at 14:27. The revert restored the previous cache warmup step. Traffic recovered after the revert. All API requests succeeded again at 14:31. We will keep the cache warmup step in future deploys.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 28984,
+  "cost_usd": null,
+  "model": "cursor-grok-4.5-medium",
+  "condition": "agent-ste",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 94,
+    "sentences": 11,
+    "mean_sentence_words": 8.5,
+    "longest_sentence_words": 13,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

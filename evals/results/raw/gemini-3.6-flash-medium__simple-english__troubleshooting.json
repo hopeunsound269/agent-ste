@@ -1,0 +1,32 @@
+{
+  "text": "## Troubleshooting\n\n### Connection Timeouts to Postgres\nsqlpipe stops with `dial tcp: i/o timeout` when it cannot reach the Postgres port (5432 by default).\n\n1. Make sure that the host that runs sqlpipe can reach the Postgres port. A firewall or security group usually blocks the connection.\n2. If the database is managed, make sure that the instance accepts connections from the IP address of sqlpipe.\n3. If the network path is slow, increase `source.connect_timeout_seconds` in the configuration.\n\n### S3 Permission Errors\nsqlpipe displays an S3 permission error when AWS denies access to the destination bucket.\n\n1. Make sure that the AWS credentials have the required permissions. The credentials must allow `s3:PutObject`, `s3:GetObject`, and `s3:ListBucket`.\n2. If you use an IAM role, make sure that the trust policy allows the host to assume the role.\n3. Make sure that the S3 bucket name and region are correct in the configuration.\n4. If the bucket uses KMS encryption, make sure that the IAM policy allows the `kms:GenerateDataKey` action.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 24952,
+  "cost_usd": null,
+  "model": "gemini-3.6-flash-medium",
+  "condition": "simple-english",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 156,
+    "sentences": 11,
+    "mean_sentence_words": 13.5,
+    "longest_sentence_words": 19,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 2,
+      "synonym_rotation": 0
+    },
+    "violations_total": 2,
+    "violations_per_100w": 1.28
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "text": "# sqlpipe v2.0 Release Notes\n\n## Breaking change: user name fields\n\nCAUTION: Update your integrations before you upgrade. The `name` field of `/v2/users` is removed, and requests that use it fail.\n\nThe `name` field is now two fields: `first_name` and `last_name`. Update your code to read and write the two new fields.\n\n## New: incremental transfers\n\nsqlpipe now has an `--incremental` flag. If you set this flag, sqlpipe copies only the rows that changed after the last transfer. A full copy is not necessary.\n\n## Faster Parquet writes\n\nParquet writes are 40% faster than in v1.x. The write path uses less memory and fewer buffer copies. No change to your configuration is necessary.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 15338,
+  "cost_usd": null,
+  "model": "claude-fable-5-medium",
+  "condition": "simple-english",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 95,
+    "sentences": 11,
+    "mean_sentence_words": 8.5,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

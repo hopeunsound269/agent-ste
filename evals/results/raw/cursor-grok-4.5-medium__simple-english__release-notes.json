@@ -1,0 +1,32 @@
+{
+  "text": "# sqlpipe v2.0\n\nThis release changes the user API, adds an incremental mode, and makes Parquet writes faster.\n\n## Breaking change\n\nCAUTION: Update your clients before you upgrade to v2.0. The `name` field of `/v2/users` is now two fields: `first_name` and `last_name`. Clients that still read `name` will fail. Map `first_name` and `last_name` in every client that uses this endpoint. Then deploy the clients. Then upgrade sqlpipe. If you cannot update the clients first, do not upgrade.\n\n## New flag\n\nYou can use the `--incremental` flag to process only new rows. sqlpipe skips rows that it already wrote. This flag helps with repeated exports of large tables.\n\n## Performance\n\nParquet writes are 40% faster than in v1. Large exports finish in less time. No configuration change is necessary for this gain.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 36954,
+  "cost_usd": null,
+  "model": "cursor-grok-4.5-medium",
+  "condition": "simple-english",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 121,
+    "sentences": 15,
+    "mean_sentence_words": 8.0,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

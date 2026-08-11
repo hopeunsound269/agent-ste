@@ -1,0 +1,12 @@
+{
+  "model": "claude-sonnet-5-medium",
+  "scenario": "release-notes",
+  "order1_theirs_first": {
+    "a_score": 9,
+    "b_score": 8
+  },
+  "order2_ours_first": {
+    "a_score": 8,
+    "b_score": 6
+  }
+}

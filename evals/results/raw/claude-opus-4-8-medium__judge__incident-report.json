@@ -1,0 +1,12 @@
+{
+  "model": "claude-opus-4-8-medium",
+  "scenario": "incident-report",
+  "order1_theirs_first": {
+    "a_score": 9,
+    "b_score": 8
+  },
+  "order2_ours_first": {
+    "a_score": 9,
+    "b_score": 7
+  }
+}

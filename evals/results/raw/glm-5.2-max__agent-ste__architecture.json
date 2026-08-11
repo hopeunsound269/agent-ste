@@ -1,0 +1,32 @@
+{
+  "text": "The sqlpipe system moves data from Postgres to S3 in three stages. Each stage runs as a separate process.\n\nA reader process connects to Postgres and reads rows in batches of 10,000 rows. The reader uses a cursor to read the rows without loading the full table into memory. The reader sends each batch to a converter.\n\nThe converter turns each batch into a Parquet row group. The converter writes the row group to memory. The converter sends the row group to an uploader.\n\nThe uploader writes each row group to S3 as one part of a multipart object. If an upload fails, the uploader tries again. The uploader tries up to five times. If the upload fails five times, the uploader writes an error. The uploader stops the job. The uploader completes the multipart upload after it writes all row groups to S3.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 37314,
+  "cost_usd": null,
+  "model": "glm-5.2-max",
+  "condition": "agent-ste",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 144,
+    "sentences": 14,
+    "mean_sentence_words": 10.3,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

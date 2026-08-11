@@ -1,0 +1,32 @@
+{
+  "text": "## Getting Started\n\n### Installation\n\nInstall sqlpipe with a single command:\n\n```bash\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nThis downloads the latest release and places the `sqlpipe` binary in your PATH. Verify the installation with `sqlpipe --version`.\n\n### Configuration\n\nsqlpipe is configured through a `sqlpipe.yaml` file in your project directory. Define your source and destination connections, along with the tables or queries you want to move:\n\n```yaml\nsource:\n  type: postgres\n  dsn: postgres://user:pass@localhost:5432/mydb\ndestination:\n  type: snowflake\n  dsn: snowflake://user:pass@account/warehouse\npipelines:\n  - name: sync-users\n    query: SELECT * FROM users\n    target_table: users\n```\n\n### First Run\n\nOnce your configuration is in place, start your first pipeline:\n\n```bash\nsqlpipe run --config sqlpipe.yaml\n```\n\nsqlpipe validates your configuration, connects to both databases, and executes each pipeline in order. Progress and any errors are printed to the terminal. Run with `--verbose` for detailed logs.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 15398,
+  "cost_usd": null,
+  "model": "claude-fable-5-medium",
+  "condition": "baseline",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 91,
+    "sentences": 9,
+    "mean_sentence_words": 10.1,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 1
+    },
+    "violations_total": 1,
+    "violations_per_100w": 1.1
+  }
+}

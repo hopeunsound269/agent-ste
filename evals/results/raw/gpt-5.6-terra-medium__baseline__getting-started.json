@@ -1,0 +1,32 @@
+{
+  "text": "## Getting started\n\nInstall sqlpipe:\n\n```sh\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nCreate a `sqlpipe.yaml` configuration file defining your source, destination, and pipeline settings. Keep credentials in environment variables or your preferred secret manager rather than committing them to the configuration file.\n\nRun your first pipeline with:\n\n```sh\nsqlpipe run --config sqlpipe.yaml\n```\n\nsqlpipe reads the configuration, validates the connection settings, and begins transferring data according to the pipeline you defined. Check the command output for progress, validation warnings, and any errors that require attention.\n\nFor repeatable workflows, store `sqlpipe.yaml` alongside your project documentation and run the same command locally or in CI. Update the configuration as your schemas, destinations, or scheduling requirements change.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 10110,
+  "cost_usd": null,
+  "model": "gpt-5.6-terra-medium",
+  "condition": "baseline",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 98,
+    "sentences": 8,
+    "mean_sentence_words": 12.2,
+    "longest_sentence_words": 18,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 2
+    },
+    "violations_total": 2,
+    "violations_per_100w": 2.04
+  }
+}

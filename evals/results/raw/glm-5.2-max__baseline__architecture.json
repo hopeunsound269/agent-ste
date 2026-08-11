@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe is a streaming pipeline that exports PostgreSQL tables to S3 as Parquet through three coordinated stages.\n\nThe reader connects to Postgres via a server-side cursor and pulls rows in fixed-size batches, keeping memory bounded regardless of table size. Each batch is emitted downstream as soon as it fills, so the pipeline never buffers an entire table in memory.\n\nThe converter receives each batch and appends it as a new row group to an in-memory Parquet writer, leveraging columnar encoding for efficient compression and fast downstream analytics.\n\nThe uploader accumulates completed row groups into multipart parts and uploads them to S3 with exponential-backoff retries, finalizing the multipart upload once the source is exhausted. Backpressure flows upstream: if uploads stall, the reader pauses, keeping throughput stable without dropping rows.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 14084,
+  "cost_usd": null,
+  "model": "glm-5.2-max",
+  "condition": "baseline",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 128,
+    "sentences": 7,
+    "mean_sentence_words": 18.3,
+    "longest_sentence_words": 28,
+    "violations": {
+      "sentence_over_limit": 2,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 1,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 3,
+    "violations_per_100w": 2.34
+  }
+}

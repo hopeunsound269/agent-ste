@@ -1,0 +1,32 @@
+{
+  "text": "Between 14:02 and 14:31 UTC, approximately 12% of API requests failed with HTTP 502 responses. The incident began after a deployment unintentionally removed the cache warmup step, causing elevated failures while uncached services handled production traffic. We identified the deployment as the cause and reverted it at 14:27 UTC. Error rates returned to normal by 14:31 UTC.\n\nWe are restoring cache warmup as a required deployment step and adding safeguards to prevent it from being removed unintentionally. We apologize for the disruption and are reviewing our deployment checks to reduce the risk of recurrence.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 8277,
+  "cost_usd": null,
+  "model": "gpt-5.6-sol-medium",
+  "condition": "baseline",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 94,
+    "sentences": 6,
+    "mean_sentence_words": 15.7,
+    "longest_sentence_words": 21,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 1,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 1.06
+  }
+}

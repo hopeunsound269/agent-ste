@@ -1,0 +1,32 @@
+{
+  "text": "Between 14:02 and 14:31 UTC, 12% of API requests failed with HTTP 502 responses. The failure started after a deploy removed the cache warmup step. The missing step left the cache without required data for some API requests. The team identified the cause and reverted the deploy at 14:27 UTC. The incident ended at 14:31 UTC. The service remained available, but some users received failed requests during the incident. The team restored the cache warmup step in the deploy process and continues to review safeguards for future deploys.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 12169,
+  "cost_usd": null,
+  "model": "gpt-5.6-luna-medium",
+  "condition": "agent-ste",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 88,
+    "sentences": 7,
+    "mean_sentence_words": 12.6,
+    "longest_sentence_words": 19,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

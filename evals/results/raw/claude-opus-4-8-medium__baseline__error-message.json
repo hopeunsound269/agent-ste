@@ -1,0 +1,32 @@
+{
+  "text": "I don't have access to sqlpipe's source code, so I can't give you the exact error message string it prints.\n\nTo find the real text (rather than guess), I'd need one of:\n- The sqlpipe repo/source (point me at it or let me search a cloned copy), or\n- A permalink to the relevant file on GitHub.\n\nIf you tell me where the code lives, I'll grep for the S3 upload error-handling path and return the verbatim message.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 8904,
+  "cost_usd": null,
+  "model": "claude-opus-4-8-medium",
+  "condition": "baseline",
+  "scenario": "error-message",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 78,
+    "sentences": 4,
+    "mean_sentence_words": 19.0,
+    "longest_sentence_words": 23,
+    "violations": {
+      "sentence_over_limit": 2,
+      "contraction": 4,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 6,
+    "violations_per_100w": 7.69
+  }
+}

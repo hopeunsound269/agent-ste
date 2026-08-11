@@ -1,0 +1,12 @@
+{
+  "model": "claude-fable-5-medium",
+  "scenario": "runbook-terse",
+  "order1_theirs_first": {
+    "a_score": 10,
+    "b_score": 10
+  },
+  "order2_ours_first": {
+    "a_score": 10,
+    "b_score": 10
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe v2.0 delivers faster exports and more flexible pipelines.\n\nBreaking change: the `/v2/users` response no longer includes the `name` field. It has been replaced by `first_name` and `last_name`. Update integrations, schemas, queries, and downstream mappings before upgrading. Consumers that still expect `name` will require migration.\n\nA new `--incremental` flag lets pipelines process only newly available or changed data instead of rebuilding the full output. This reduces unnecessary work and makes recurring jobs more efficient.\n\nParquet writing is now 40% faster, significantly shortening export times for large datasets and improving throughput in data-intensive workflows.\n\nReview your `/v2/users` consumers, update field mappings, and test existing pipelines before deploying sqlpipe v2.0 to production.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 24362,
+  "cost_usd": null,
+  "model": "gpt-5.6-sol-medium",
+  "condition": "baseline",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 111,
+    "sentences": 10,
+    "mean_sentence_words": 11.1,
+    "longest_sentence_words": 19,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 1,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.9
+  }
+}

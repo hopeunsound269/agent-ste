@@ -1,0 +1,32 @@
+{
+  "text": "## Troubleshooting\n\n### Postgres Connection Timeouts\n\nIf `sqlpipe` fails to connect or times out when querying Postgres, verify network reachability and database credentials. Ensure security groups, firewalls, and `pg_hba.conf` allow inbound traffic from your client host on port 5432. For large tables or high-latency network connections, increase the query timeout using the `--timeout` CLI flag or the `SQLPIPE_PG_TIMEOUT` environment variable. Also verify that active database locks or long-running transactions are not blocking table reads.\n\n### S3 Permission Errors\n\n`AccessDenied` errors during S3 write operations indicate missing or insufficient IAM permissions. Ensure your AWS IAM user or execution role has `s3:PutObject`, `s3:GetObject`, and `s3:ListBucket` permissions on the target bucket and prefix path. Check that `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION` are correctly configured in your environment. If your bucket uses AWS KMS encryption, verify that the IAM identity also possesses `kms:GenerateDataKey` and `kms:Decrypt` permissions on the target key.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 28827,
+  "cost_usd": null,
+  "model": "gemini-3.6-flash-medium",
+  "condition": "baseline",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 139,
+    "sentences": 8,
+    "mean_sentence_words": 17.4,
+    "longest_sentence_words": 23,
+    "violations": {
+      "sentence_over_limit": 3,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 2
+    },
+    "violations_total": 5,
+    "violations_per_100w": 3.6
+  }
+}

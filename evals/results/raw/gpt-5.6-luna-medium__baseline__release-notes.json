@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe v2.0 brings a breaking API update, faster data exports, and a new incremental workflow.\n\nBreaking change: `/v2/users` no longer returns a single `name` field. It now provides `first_name` and `last_name`. Update clients, serializers, and downstream transformations before upgrading.\n\nThe new `--incremental` flag lets you process only records changed since the previous run, reducing unnecessary work and making recurring pipelines more efficient. Use it for scheduled syncs and large datasets where full exports are costly.\n\nParquet writes are now up to 40% faster, improving end-to-end pipeline performance without requiring configuration changes.\n\nReview integrations for the `/v2/users` schema change, test incremental runs against your source data, and then upgrade to sqlpipe v2.0.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 17921,
+  "cost_usd": null,
+  "model": "gpt-5.6-luna-medium",
+  "condition": "baseline",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 112,
+    "sentences": 9,
+    "mean_sentence_words": 12.4,
+    "longest_sentence_words": 23,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 2,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 2,
+    "violations_per_100w": 1.79
+  }
+}

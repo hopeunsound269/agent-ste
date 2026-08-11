@@ -1,0 +1,32 @@
+{
+  "text": "# sqlpipe v2.0 Release Notes\n\nThis release includes one breaking API change, one new CLI flag, and faster Parquet output.\n\n## Breaking change: `/v2/users`\n\nThe `/v2/users` endpoint no longer returns a `name` field for each user record. It returns separate `first_name` and `last_name` fields instead.\n\nMake sure that you update client code before you upgrade to v2.0. Replace each use of `name` with `first_name` and `last_name`.\n\n## New CLI flag: `--incremental`\n\nThe sqlpipe CLI has a new `--incremental` flag. When a pipeline must write only new or changed rows, use the flag. The tool compares the current source data with the last run. It skips rows that the previous successful run already wrote to the destination.\n\n## Performance improvement\n\nParquet write throughput is 40% higher in v2.0 than in v1.x. Large batch jobs complete sooner with the same hardware.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 51343,
+  "cost_usd": null,
+  "model": "composer-2.5",
+  "condition": "agent-ste",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 123,
+    "sentences": 11,
+    "mean_sentence_words": 11.2,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

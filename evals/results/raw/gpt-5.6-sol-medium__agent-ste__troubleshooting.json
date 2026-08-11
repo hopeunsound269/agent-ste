@@ -1,0 +1,32 @@
+{
+  "text": "## Troubleshooting connection and permission errors\n\n### Postgres connection timeouts\n\nIf sqlpipe reports a Postgres connection timeout, make sure that the host and port are correct.\n\nMake sure that the database server accepts connections from the client network.\n\nRun `psql` with the same Postgres connection string that sqlpipe uses.\n\nIf `psql` also times out, examine the firewall, proxy, VPN, and database access rules.\n\nIf `psql` connects, examine the sqlpipe timeout value and connection string.\n\nIncrease the timeout only after you identify a slow but valid connection.\n\n### S3 permission errors\n\nIf sqlpipe reports an S3 permission error, run `aws sts get-caller-identity` with the same credentials.\n\nMake sure that the command shows the expected AWS account and role.\n\nMake sure that the S3 bucket uses the expected AWS region.\n\nFor uploads, grant `s3:PutObject` and `s3:AbortMultipartUpload` for the target object path.\n\nFor downloads, grant `s3:GetObject` for the target object path.\n\nIf the bucket uses KMS encryption, grant the required KMS permissions.\n\nExamine the bucket policy for explicit deny rules.\n\nRetry the sqlpipe command.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 25054,
+  "cost_usd": null,
+  "model": "gpt-5.6-sol-medium",
+  "condition": "agent-ste",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 155,
+    "sentences": 14,
+    "mean_sentence_words": 11.1,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

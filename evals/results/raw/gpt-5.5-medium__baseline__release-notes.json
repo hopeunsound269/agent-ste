@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe v2.0 is out with a breaking API change, a new incremental mode, and faster Parquet output.\n\nThe `/v2/users` response no longer returns a single `name` field. It now returns `first_name` and `last_name`, making user records easier to parse, sort, and map into downstream systems. Update any clients, transforms, or schemas that still read `name` before upgrading.\n\nThis release also adds `--incremental`, letting sqlpipe process only new or changed data instead of rerunning full exports every time. It is useful for scheduled syncs, large datasets, and lower-cost pipelines.\n\nParquet writes are now about 40% faster, reducing export time for analytics workloads without changing output format.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 16774,
+  "cost_usd": null,
+  "model": "gpt-5.5-medium",
+  "condition": "baseline",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 107,
+    "sentences": 7,
+    "mean_sentence_words": 15.3,
+    "longest_sentence_words": 21,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 2,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 2,
+    "violations_per_100w": 1.87
+  }
+}

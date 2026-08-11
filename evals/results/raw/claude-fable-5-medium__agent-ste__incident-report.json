@@ -1,0 +1,32 @@
+{
+  "text": "**Incident report: API errors, 14:02\u201314:31 UTC**\n\nBetween 14:02 and 14:31 UTC, 12% of API requests failed with HTTP 502.\n\nAt 14:02 UTC, we released a deploy that removed the cache warmup step. New servers started with an empty cache. Requests to those servers timed out. The load balancer returned HTTP 502 for those requests.\n\nWe reverted the deploy at 14:27 UTC. The error rate returned to normal at 14:31 UTC. The incident did not cause data loss. If a request failed during this period, you can send it again now.\n\nWe will add a test to the deploy pipeline. The test makes sure that each deploy keeps the cache warmup step.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 18774,
+  "cost_usd": null,
+  "model": "claude-fable-5-medium",
+  "condition": "agent-ste",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 111,
+    "sentences": 12,
+    "mean_sentence_words": 9.2,
+    "longest_sentence_words": 17,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

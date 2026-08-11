@@ -1,0 +1,32 @@
+{
+  "text": "## Getting started\n\nThe `sqlpipe` tool moves data from a source database to a target database.\n\nFollow these steps to install and run `sqlpipe` for the first time.\n\n1. Install the tool. Run this command:\n\n```bash\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\n2. Make sure that the tool is installed. Run `sqlpipe --version`. The command shows the version number.\n\n3. Create a file with the name `sqlpipe.yaml`. Set these values in the file:\n\n- the source database connection string\n- the target database connection string\n- the tables that you want to move\n\n4. Start your first run. Run this command:\n\n```bash\nsqlpipe run --config sqlpipe.yaml\n```\n\nThe tool reads `sqlpipe.yaml`. The tool copies the tables from the source database to the target database. The tool shows the progress for each table.\n\nIf the run fails, read the log. The log names the table and the cause.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 10581,
+  "cost_usd": null,
+  "model": "claude-opus-4-8-medium",
+  "condition": "agent-ste",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 133,
+    "sentences": 16,
+    "mean_sentence_words": 7.9,
+    "longest_sentence_words": 21,
+    "violations": {
+      "sentence_over_limit": 1,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.75
+  }
+}

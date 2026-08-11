@@ -1,0 +1,32 @@
+{
+  "text": "Between 14:02 and 14:31 UTC, 12% of API requests failed with HTTP 502 errors. The incident lasted 29 minutes.\n\nThe cause was a deploy that removed the cache warmup step from the startup sequence. Without the warm cache, the application did not serve requests fast enough. The load balancer closed these connections and returned HTTP 502 to clients.\n\nAt 14:27, the operations team reverted the deploy. The cache warmup step ran again. The error rate returned to zero by 14:31. All services operated normally after 14:31. No data was lost.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 38305,
+  "cost_usd": null,
+  "model": "glm-5.2-max",
+  "condition": "simple-english",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 90,
+    "sentences": 10,
+    "mean_sentence_words": 9.0,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

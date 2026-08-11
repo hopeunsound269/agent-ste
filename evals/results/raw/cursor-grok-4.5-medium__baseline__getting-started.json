@@ -1,0 +1,32 @@
+{
+  "text": "## Getting started\n\nInstall sqlpipe with the official installer:\n\n```bash\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nThis downloads the binary and places it on your `PATH`. Confirm the install with `sqlpipe --version`.\n\nNext, create a `sqlpipe.yaml` config in your project root. Define your source and destination connections, the queries or tables to move, and any batching or scheduling options you need. Keep credentials out of version control\u2014use environment variables or a secrets manager and reference them from the config.\n\nWhen the file is ready, run your first pipeline:\n\n```bash\nsqlpipe run --config sqlpipe.yaml\n```\n\nsqlpipe loads the config, connects to each database, and executes the defined transfers. Check the terminal output for progress and errors. On success, your data lands in the destination according to the mappings in `sqlpipe.yaml`. Iterate on the config as you add pipelines or tighten performance settings.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 13166,
+  "cost_usd": null,
+  "model": "cursor-grok-4.5-medium",
+  "condition": "baseline",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 127,
+    "sentences": 11,
+    "mean_sentence_words": 11.5,
+    "longest_sentence_words": 20,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 2
+    },
+    "violations_total": 2,
+    "violations_per_100w": 1.57
+  }
+}

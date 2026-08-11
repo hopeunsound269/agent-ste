@@ -1,0 +1,32 @@
+{
+  "text": "# sqlpipe v2.0 Release Notes\n\n## Breaking change: user name fields\n\nThe `/v2/users` endpoint no longer has the `name` field. The endpoint now has two fields: `first_name` and `last_name`. If a client sends `name`, the endpoint rejects the request with error 400. Before you upgrade, update each client that reads or writes the `name` field.\n\n## New flag: `--incremental`\n\nThe `--incremental` flag copies only the rows that changed after the last run. If the state file does not exist, sqlpipe copies all rows and creates the state file. Full copies stay the default behavior.\n\n## Faster Parquet writes\n\nsqlpipe v2.0 writes Parquet files 40% faster than v1.9. The writer buffers row groups in memory before it writes them to disk.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 18879,
+  "cost_usd": null,
+  "model": "claude-fable-5-medium",
+  "condition": "agent-ste",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 103,
+    "sentences": 10,
+    "mean_sentence_words": 10.3,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

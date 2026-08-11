@@ -1,0 +1,32 @@
+{
+  "text": "# sqlpipe v2.0 Release Notes\n\n## Breaking Changes\n\nCAUTION: The `name` field of `/v2/users` is removed. Update your clients before you upgrade.\n\nThe `/v2/users` endpoint now returns two fields, `first_name` and `last_name`. The old `name` field no longer exists. If a client reads `name`, the client fails. Split your name handling into the two new fields.\n\n## New Features\n\nYou can now run incremental syncs with the `--incremental` flag. sqlpipe copies only the rows that changed since the last run.\n\n## Improvements\n\nParquet writes are 40% faster in this release.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 8574,
+  "cost_usd": null,
+  "model": "claude-opus-4-8-medium",
+  "condition": "simple-english",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 79,
+    "sentences": 9,
+    "mean_sentence_words": 8.7,
+    "longest_sentence_words": 11,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

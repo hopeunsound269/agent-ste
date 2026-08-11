@@ -1,0 +1,32 @@
+{
+  "text": "## Troubleshooting\n\n**Postgres connection timeouts**\n\nIf `sqlpipe` hangs or fails with `connection refused` or `ETIMEDOUT`, verify the host and port are reachable: `nc -zv <host> 5432`. Common causes include firewall rules blocking outbound traffic, the database requiring SSL (add `sslmode=require` to the connection string), or a VPC/peering mismatch when connecting across cloud networks. For long-running queries, increase the timeout with `--connect-timeout 30` and `--query-timeout 300`. If the instance is behind a connection pooler like PgBouncer, ensure `statement_timeout` on the server isn't lower than your expected runtime.\n\n**S3 permission errors**\n\n`AccessDenied` or `403 Forbidden` usually indicates the IAM role or access key lacks the required actions. `sqlpipe` needs `s3:GetObject`, `s3:PutObject`, and `s3:ListBucket` on the target bucket. Verify the credentials in use with `aws sts get-caller-identity`, confirm the bucket policy allows your principal, and check that KMS key policies grant `kms:Decrypt` if objects are encrypted.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 8187,
+  "cost_usd": null,
+  "model": "glm-5.2-max",
+  "condition": "baseline",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 138,
+    "sentences": 8,
+    "mean_sentence_words": 17.2,
+    "longest_sentence_words": 27,
+    "violations": {
+      "sentence_over_limit": 3,
+      "contraction": 1,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 2,
+      "synonym_rotation": 3
+    },
+    "violations_total": 9,
+    "violations_per_100w": 6.52
+  }
+}

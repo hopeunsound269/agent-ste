@@ -1,0 +1,32 @@
+{
+  "text": "Between 14:02 and 14:31 UTC, 12% of API requests failed with HTTP 502 errors.\n\nA deploy at 14:02 removed the cache warmup step from the release pipeline. When the new code started, the cache stayed empty. The upstream service rejected requests for data that it did not store. The service returned HTTP 502 for each rejected request.\n\nAt 14:27, the operations team reverted the deploy to the previous version. The revert restored the cache warmup step. The cache filled with data. The error rate returned to zero at 14:31.\n\nThe incident did not erase any data. The API is healthy now.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 33435,
+  "cost_usd": null,
+  "model": "glm-5.2-max",
+  "condition": "agent-ste",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 101,
+    "sentences": 11,
+    "mean_sentence_words": 9.2,
+    "longest_sentence_words": 14,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "text": "**Getting started**\n\nsqlpipe moves data between databases from the command line. This section shows the installation, the configuration, and the first run.\n\n**Install sqlpipe**\n\n1. Run `curl -sSL https://get.sqlpipe.dev | sh` in a terminal.\n2. The script downloads the sqlpipe binary and installs it.\n\n**Configure sqlpipe**\n\n1. Create a file with the name `sqlpipe.yaml` in your project directory.\n2. Add the source database and the target database to the configuration.\n3. Make sure that the configuration contains the correct credentials for each database.\n\n**Run sqlpipe**\n\n1. Run `sqlpipe run --config sqlpipe.yaml`.\n2. sqlpipe reads the configuration, connects to the databases, and moves the data.\n3. If the run fails, read the log output. The log shows the error and the step that caused it.\n\n**Next steps**\n\nRead the configuration reference for all options. Then add schedules, filters, and transformations to the configuration.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 24512,
+  "cost_usd": null,
+  "model": "claude-fable-5-medium",
+  "condition": "simple-english",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 136,
+    "sentences": 13,
+    "mean_sentence_words": 9.8,
+    "longest_sentence_words": 13,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

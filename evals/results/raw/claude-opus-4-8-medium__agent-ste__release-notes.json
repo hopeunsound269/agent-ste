@@ -1,0 +1,32 @@
+{
+  "text": "# sqlpipe v2.0 release notes\n\n## Breaking changes\n\nThe `/v2/users` endpoint changed the response format. Version 1 returned one `name` field. Version 2 returns two fields: `first_name` and `last_name`.\n\nIf your code reads `name`, you must update it before you upgrade. Read `first_name` and `last_name` instead.\n\n## New features\n\nVersion 2.0 adds the `--incremental` flag. If you set `--incremental`, sqlpipe copies only the rows that changed since the last run.\n\n## Performance\n\nVersion 2.0 writes Parquet files 40% faster than version 1.9.\n\n## How to upgrade\n\n1. Update your client code to read `first_name` and `last_name`.\n2. Install sqlpipe v2.0.\n3. Run your pipeline.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 11033,
+  "cost_usd": null,
+  "model": "claude-opus-4-8-medium",
+  "condition": "agent-ste",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 91,
+    "sentences": 12,
+    "mean_sentence_words": 7.3,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

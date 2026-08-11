@@ -1,0 +1,32 @@
+{
+  "text": "## Troubleshooting\n\nIf `sqlpipe` times out while connecting to Postgres, first confirm the host, port, database name, username, and SSL mode in your connection string. Test the same connection with `psql` from the same machine or container where `sqlpipe` runs. If `psql` also hangs, check network access, firewall rules, VPN status, security groups, and whether the database accepts connections from your IP. For long-running exports, increase the connection or statement timeout if your environment supports it.\n\nIf writes to S3 fail with `AccessDenied`, `403 Forbidden`, or `SignatureDoesNotMatch`, verify that the AWS credentials used by `sqlpipe` are the ones you expect. Run `aws sts get-caller-identity` in the same shell to confirm the active identity. The role or user needs permission for the target bucket and prefix, usually `s3:PutObject`, `s3:AbortMultipartUpload`, and, for some workflows, `s3:ListBucket`. Also check bucket policies, region settings, and any required KMS key permissions.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 17288,
+  "cost_usd": null,
+  "model": "gpt-5.5-medium",
+  "condition": "baseline",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 146,
+    "sentences": 8,
+    "mean_sentence_words": 18.2,
+    "longest_sentence_words": 26,
+    "violations": {
+      "sentence_over_limit": 4,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 2
+    },
+    "violations_total": 7,
+    "violations_per_100w": 4.79
+  }
+}

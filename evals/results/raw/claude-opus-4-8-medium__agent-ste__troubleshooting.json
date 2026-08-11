@@ -1,0 +1,32 @@
+{
+  "text": "# Troubleshooting\n\n## Connection timeouts to Postgres\n\nThe CLI tool sqlpipe waits 30 seconds for a Postgres connection. After 30 seconds, sqlpipe stops and shows the error `connection timed out`.\n\nTo fix a connection timeout, do these steps:\n\n1. Make sure that the database host and port are correct.\n2. Make sure that the database accepts connections from your IP address.\n3. If you use a firewall, open the database port.\n4. Run the command again.\n\n## S3 permission errors\n\nsqlpipe reads and writes objects in your S3 bucket. If the IAM user does not have access, sqlpipe shows the error `AccessDenied`.\n\nTo fix an `AccessDenied` error, do these steps:\n\n1. Make sure that the IAM user has the actions `s3:GetObject` and `s3:PutObject`.\n2. Make sure that the bucket policy allows the IAM user.\n3. Make sure that the AWS Region is correct.\n4. Run the command again.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 11439,
+  "cost_usd": null,
+  "model": "claude-opus-4-8-medium",
+  "condition": "agent-ste",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 138,
+    "sentences": 14,
+    "mean_sentence_words": 9.3,
+    "longest_sentence_words": 14,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

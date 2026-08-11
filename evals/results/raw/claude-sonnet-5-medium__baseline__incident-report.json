@@ -1,0 +1,32 @@
+{
+  "text": "Between 14:02 and 14:31 UTC, some users experienced elevated error rates when accessing our API. A recent deploy inadvertently removed a cache warmup step, causing approximately 12% of API requests to fail with HTTP 502 errors during this window. Our monitoring detected the increased error rate shortly after the deploy, and our team began investigating immediately. At 14:27 UTC, the deploy was reverted, which resolved the underlying cause. Error rates returned to normal shortly thereafter, and full service was confirmed restored by 14:31 UTC. We apologize for the disruption and are reviewing our deployment process to prevent similar issues going forward.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 10223,
+  "cost_usd": null,
+  "model": "claude-sonnet-5-medium",
+  "condition": "baseline",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 101,
+    "sentences": 6,
+    "mean_sentence_words": 16.8,
+    "longest_sentence_words": 24,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 1,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 2,
+    "violations_per_100w": 1.98
+  }
+}

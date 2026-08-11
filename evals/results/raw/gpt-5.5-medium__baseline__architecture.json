@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe is a three-stage streaming pipeline for moving Postgres query results into S3-backed Parquet datasets. A reader process owns the database cursor, pulls rows in bounded batches, and applies backpressure so memory stays predictable even for large exports. Each batch is handed to the converter, which maps Postgres types into the target schema and encodes the data as Parquet row groups. Row groups form the natural unit of compression, statistics, and downstream scan efficiency. The uploader consumes completed Parquet parts and writes them as multipart S3 objects, retrying failed part uploads with idempotent part numbers before completing the object. This separation keeps database IO, CPU-heavy encoding, and network IO isolated, while the batch boundary gives sqlpipe a clear recovery and observability point throughout the export.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 18566,
+  "cost_usd": null,
+  "model": "gpt-5.5-medium",
+  "condition": "baseline",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 125,
+    "sentences": 6,
+    "mean_sentence_words": 20.8,
+    "longest_sentence_words": 26,
+    "violations": {
+      "sentence_over_limit": 1,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.8
+  }
+}

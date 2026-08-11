@@ -1,0 +1,32 @@
+{
+  "text": "## Getting started\n\n### 1. Install sqlpipe\n\nOpen a terminal.\n\nRun the installation command:\n\n```sh\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nOpen a new terminal after the installation.\n\nMake sure that the `sqlpipe` command is available.\n\n### 2. Configure sqlpipe\n\nCreate `sqlpipe.yaml` in your project directory.\n\nAdd the configuration values that your sqlpipe job requires.\n\nUse spaces for YAML indentation.\n\nAdd the source connection information.\n\nThen add the destination connection information.\n\nAdd all other required job values.\n\nSave `sqlpipe.yaml`.\n\nMake sure that the file contains valid YAML.\n\n### 3. Start the first run\n\nOpen the directory that contains `sqlpipe.yaml`.\n\nRun sqlpipe with this command:\n\n```sh\nsqlpipe run --config sqlpipe.yaml\n```\n\nRead the output in the terminal.\n\nIf sqlpipe reports a configuration error, correct the specified value.\n\nThen run the command again.\n\nIf the run is successful, sqlpipe processes the job from `sqlpipe.yaml`.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 19640,
+  "cost_usd": null,
+  "model": "gpt-5.6-sol-medium",
+  "condition": "simple-english",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 115,
+    "sentences": 18,
+    "mean_sentence_words": 6.4,
+    "longest_sentence_words": 12,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "model": "glm-5.2-max",
+  "scenario": "release-notes",
+  "order1_theirs_first": {
+    "a_score": 0,
+    "b_score": 9
+  },
+  "order2_ours_first": {
+    "a_score": 9,
+    "b_score": 0
+  }
+}

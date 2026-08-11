@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe is a three-stage pipeline that moves relational data from Postgres into S3 as Parquet, with each stage running as an independent process connected by bounded queues.\n\nThe reader process opens a server-side cursor against Postgres and streams rows in fixed-size batches, keeping memory flat regardless of table size and letting downstream stages apply backpressure.\n\nThe converter consumes these batches, maps Postgres types to a Parquet schema, and accumulates rows into columnar row groups, flushing each group once it reaches a target size to balance compression against memory.\n\nThe uploader takes completed row groups and writes them to S3 using multipart uploads. Each part is retried independently with exponential backoff, and a failed upload is aborted cleanly so no orphaned parts accumulate. Completed objects are committed atomically, so partial files never become visible to consumers.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 16360,
+  "cost_usd": null,
+  "model": "claude-fable-5-medium",
+  "condition": "baseline",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 135,
+    "sentences": 6,
+    "mean_sentence_words": 22.5,
+    "longest_sentence_words": 33,
+    "violations": {
+      "sentence_over_limit": 3,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 3,
+    "violations_per_100w": 2.22
+  }
+}

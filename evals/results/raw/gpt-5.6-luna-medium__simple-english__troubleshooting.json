@@ -1,0 +1,32 @@
+{
+  "text": "## Connection timeouts\n\nsqlpipe stops with a connection timeout when the network path does not respond.\n\n1. Make sure that the host that runs sqlpipe can reach the PostgreSQL server on port 5432.\n2. Make sure that the PostgreSQL server accepts connections from the sqlpipe host.\n3. If a firewall blocks the connection, allow outbound TCP traffic to port 5432.\n4. If the network is slow, increase `source.connect_timeout_seconds` in the configuration.\n5. Make sure that the hostname and port in the connection string match the database.\n\n## S3 permission errors\n\nsqlpipe reports an S3 permission error because AWS denies an operation.\n\n1. Read the complete error message to identify the denied operation.\n2. Make sure that the credentials belong to the intended AWS identity.\n3. If sqlpipe reads objects, grant `s3:GetObject` permission.\n4. If sqlpipe writes objects, grant `s3:PutObject` permission.\n5. If sqlpipe lists objects, grant `s3:ListBucket` permission on the bucket.\n6. Make sure that the bucket policy allows the AWS identity to perform the operation.\n7. Make sure that the bucket name and AWS region match the configuration.\n8. After you change the policy, run sqlpipe again.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 19019,
+  "cost_usd": null,
+  "model": "gpt-5.6-luna-medium",
+  "condition": "simple-english",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 181,
+    "sentences": 15,
+    "mean_sentence_words": 11.2,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.55
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "text": "## Getting started\n\nRun this command to install sqlpipe:\n\n`curl -sSL https://get.sqlpipe.dev | sh`\n\nCreate a configuration file named `sqlpipe.yaml`. Put this file in the directory for your project. Open the configuration. Enter the host, port, user, and password for the source database. Enter the host, port, user, and password for the destination database. List each table that sqlpipe must transfer. Save the file before you run the command.\n\nThen run the first transfer with this command:\n\n`sqlpipe run --config sqlpipe.yaml`\n\nNote: sqlpipe reads the configuration. sqlpipe connects to the source database and the destination database. Then sqlpipe transfers the listed tables. After a successful run, the destination holds the same rows as the source for those tables.\n\nIf the command fails, make sure that the connection values in the configuration are correct. Make sure that your host can reach the database ports. Then run the command again.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 56110,
+  "cost_usd": null,
+  "model": "cursor-grok-4.5-medium",
+  "condition": "simple-english",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 139,
+    "sentences": 17,
+    "mean_sentence_words": 8.2,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

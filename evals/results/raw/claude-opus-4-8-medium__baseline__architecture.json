@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe moves Postgres tables into S3 as Parquet through three decoupled stages connected by bounded channels, so each stage applies backpressure to the one before it.\n\nThe reader process opens a cursor against Postgres and streams rows in fixed-size batches, keeping memory flat regardless of table size. Batches flow to the converter, which accumulates rows and encodes them into Parquet row groups, choosing group boundaries to balance compression against streaming latency. Completed row groups pass to the uploader, which writes them to S3 using multipart uploads, buffering parts until they reach the minimum part size and retrying failed parts with exponential backoff.\n\nBecause the stages run concurrently and communicate only through channels, a slow uploader naturally throttles the reader, bounding total memory while sustaining high throughput across the pipeline.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 12483,
+  "cost_usd": null,
+  "model": "claude-opus-4-8-medium",
+  "condition": "baseline",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 129,
+    "sentences": 5,
+    "mean_sentence_words": 25.8,
+    "longest_sentence_words": 31,
+    "violations": {
+      "sentence_over_limit": 3,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 3,
+    "violations_per_100w": 2.33
+  }
+}

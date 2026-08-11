@@ -1,0 +1,32 @@
+{
+  "text": "## Incident Report: Elevated API Errors\n\nBetween 14:02 and 14:31 UTC, 12% of API requests failed with HTTP 502.\n\nA deploy at 14:02 removed the cache warmup step. Without the warmup step, the cache was empty. The empty cache overloaded the backend, and the backend returned HTTP 502 errors.\n\nWe identified the cause at 14:24. We reverted the deploy at 14:27. Error rates returned to normal at 14:31.\n\nThe revert restored the cache warmup step. The next deploy will add a test that makes sure that the warmup step runs.\n\nWe are sorry for the disruption to your service.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 9031,
+  "cost_usd": null,
+  "model": "claude-opus-4-8-medium",
+  "condition": "simple-english",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 93,
+    "sentences": 10,
+    "mean_sentence_words": 9.3,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

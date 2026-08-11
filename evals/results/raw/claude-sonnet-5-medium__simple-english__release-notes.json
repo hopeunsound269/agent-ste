@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe v2.0\n\nBREAKING CHANGE: The `name` field of the `/v2/users` endpoint is now two fields, `first_name` and `last_name`. Update your client code to use these two fields before you upgrade. After the upgrade, requests that read the old `name` field will fail.\n\nNew feature: The `--incremental` flag runs a sync that transfers only new and changed rows. Use this flag to reduce the time of a sync on large tables.\n\nPerformance: Parquet writes are 40% faster than in v1. This change affects all export commands that use the Parquet format.\n\nIf you use the `name` field in your code, read the migration guide before you upgrade.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 13481,
+  "cost_usd": null,
+  "model": "claude-sonnet-5-medium",
+  "condition": "simple-english",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 107,
+    "sentences": 10,
+    "mean_sentence_words": 10.6,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

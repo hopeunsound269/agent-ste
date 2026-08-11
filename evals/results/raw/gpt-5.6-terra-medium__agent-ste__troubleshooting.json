@@ -1,0 +1,32 @@
+{
+  "text": "## Troubleshooting\n\nIf a Postgres connection times out, make sure that the host name and port are correct. Make sure that the network can reach the Postgres server. Use `psql` with the same connection string to isolate the network problem. If `psql` also times out, ask the database administrator to allow traffic from the sqlpipe host. If the server requires TLS, add the required SSL parameters to the connection string. Increase the connection timeout only after the network path works.\n\nIf sqlpipe reports an S3 permission error, read the exact bucket and object path in the error message. Make sure that the AWS credentials belong to the expected IAM principal. Grant that principal `s3:ListBucket` on the bucket. Grant that principal `s3:GetObject` for input objects. Grant that principal `s3:PutObject` for output objects. If the bucket uses KMS encryption, grant the required KMS permissions. If temporary credentials expire, renew them before you run sqlpipe. If the error continues, read the bucket policy and the IAM policy.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 17662,
+  "cost_usd": null,
+  "model": "gpt-5.6-terra-medium",
+  "condition": "agent-ste",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 162,
+    "sentences": 14,
+    "mean_sentence_words": 11.6,
+    "longest_sentence_words": 18,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

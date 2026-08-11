@@ -1,0 +1,32 @@
+{
+  "text": "## Getting Started\n\nsqlpipe is a lightweight CLI tool for building and running data pipelines from the command line.\n\n### Installation\n\nInstall sqlpipe with a single command:\n\n```bash\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nThis downloads the latest release and adds the `sqlpipe` binary to your `PATH`. Verify the install by running `sqlpipe --version`.\n\n### Configuration\n\nsqlpipe pipelines are defined in a YAML file. Create a `sqlpipe.yaml` in your project directory describing your sources, transformations, and destinations:\n\n```yaml\nsource:\n  type: postgres\n  dsn: postgres://user:pass@localhost:5432/mydb\n\ndestination:\n  type: csv\n  path: ./output.csv\n```\n\nAdjust the fields to match your data source and desired output.\n\n### First Run\n\nWith your configuration in place, run your first pipeline:\n\n```bash\nsqlpipe run --config sqlpipe.yaml\n```\n\nsqlpipe will validate the configuration, connect to your source, and stream data to the destination, printing progress as it goes. From here, explore additional options with `sqlpipe run --help`.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 9869,
+  "cost_usd": null,
+  "model": "claude-sonnet-5-medium",
+  "condition": "baseline",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 112,
+    "sentences": 10,
+    "mean_sentence_words": 11.2,
+    "longest_sentence_words": 20,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 1
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.89
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "text": "I'll draft the text, then run the final gate as a real search before delivering.All gate searches return zero hits. Cleaning up the scratch# sqlpipe\n\n`sqlpipe` is a CLI tool that syncs data from Postgres tables to S3 as Parquet files. The tool reads rows from a source database and writes them to a target bucket. You can run the tool on a schedule or as a one-time job. The tool keeps the column types from Postgres in the Parquet output.\n\nThe tool connects to Postgres with a standard connection string. The tool writes Parquet files to the S3 bucket that you specify. Each run produces one file per table. The tool uses the table name as the file name. You can sync one table or many tables in one command. The tool prints the number of rows that it wrote to each file.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 50342,
+  "cost_usd": null,
+  "model": "glm-5.2-max",
+  "condition": "agent-ste",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 144,
+    "sentences": 11,
+    "mean_sentence_words": 13.1,
+    "longest_sentence_words": 21,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 1,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.69
+  }
+}

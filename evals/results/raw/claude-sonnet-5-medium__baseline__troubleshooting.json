@@ -1,0 +1,32 @@
+{
+  "text": "## Troubleshooting\n\n**Connection timeouts to Postgres**\nIf sqlpipe hangs or fails with a connection timeout, first verify network reachability with `psql -h <host> -p <port>` or `telnet <host> <port>`. Check that the Postgres server's `pg_hba.conf` allows connections from sqlpipe's host/IP and that `listen_addresses` includes the correct interface. Confirm security groups, firewalls, or VPC rules aren't blocking the port (default 5432). If using SSL, ensure `sslmode` matches server requirements (`disable`, `require`, `verify-full`). Increase `--connect-timeout` if the network has high latency, and check for connection pool exhaustion on the database side.\n\n**S3 permission errors**\nAccess denied or 403 errors usually indicate missing IAM permissions. Ensure the credentials sqlpipe uses have `s3:GetObject`, `s3:PutObject`, and `s3:ListBucket` on the target bucket/prefix. Verify the bucket policy and any KMS key policies allow the role to encrypt/decrypt if server-side encryption is enabled. Double-check the bucket region matches sqlpipe's configured region, and confirm credentials haven't expired if using temporary STS tokens.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 12413,
+  "cost_usd": null,
+  "model": "claude-sonnet-5-medium",
+  "condition": "baseline",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 152,
+    "sentences": 9,
+    "mean_sentence_words": 16.9,
+    "longest_sentence_words": 22,
+    "violations": {
+      "sentence_over_limit": 1,
+      "contraction": 2,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 4,
+      "synonym_rotation": 3
+    },
+    "violations_total": 10,
+    "violations_per_100w": 6.58
+  }
+}

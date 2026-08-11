@@ -1,0 +1,32 @@
+{
+  "text": "# Getting Started with sqlpipe\n\nThis document shows you how to install, configure, and run sqlpipe.\n\n## Step 1: Install sqlpipe\n\nTo install sqlpipe, run this command in your terminal:\n\n```bash\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nThe command downloads the sqlpipe executable and installs it on your system.\n\n## Step 2: Configure sqlpipe\n\nsqlpipe requires a configuration file named `sqlpipe.yaml` to store database connection details.\n\n1. Create a file named `sqlpipe.yaml` in your project folder.\n2. Open `sqlpipe.yaml` in your text editor.\n3. Add the connection parameters for your source database to `sqlpipe.yaml`.\n4. Add the connection parameters for your target database to `sqlpipe.yaml`.\n5. Make sure that all parameters use valid YAML formatting.\n\n## Step 3: Run sqlpipe\n\nWhen `sqlpipe.yaml` is complete, you can start your first pipeline run.\n\n1. Open your terminal in the directory that contains `sqlpipe.yaml`.\n2. Run this command to start sqlpipe:\n\n```bash\nsqlpipe run --config sqlpipe.yaml\n```\n\n3. Observe the output log to monitor the status of the pipeline.\n4. If an error occurs, make sure that your database credentials in `sqlpipe.yaml` are correct.\n5. If the connection fails, make sure that your network firewall permits access to the database port.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 29015,
+  "cost_usd": null,
+  "model": "gemini-3.6-flash-medium",
+  "condition": "simple-english",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 168,
+    "sentences": 15,
+    "mean_sentence_words": 10.5,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "text": "## Getting started\n\n### Install\n\nInstall sqlpipe with the one-line installer:\n\n```bash\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nThis places the `sqlpipe` binary on your PATH. Verify it with `sqlpipe --version`.\n\n### Configure\n\nsqlpipe is driven by a YAML config file. Create `sqlpipe.yaml` in your project directory:\n\n```yaml\nsource:\n  driver: postgres\n  url: ${SOURCE_DATABASE_URL}\n\ntarget:\n  driver: snowflake\n  url: ${TARGET_DATABASE_URL}\n\ntables:\n  - name: public.users\n  - name: public.orders\n```\n\nValues written as `${VAR}` are read from the environment, so credentials never need to live in the file. Keep `sqlpipe.yaml` in version control and your secrets in a `.env` file or your secret manager.\n\n### First run\n\nRun the pipeline:\n\n```bash\nsqlpipe run --config sqlpipe.yaml\n```\n\nsqlpipe validates the config, connects to both databases, and copies each listed table, printing progress per table. Add `--dry-run` to check connectivity and permissions without moving data.\n\nOne caveat: I don't have access to sqlpipe's real config schema, so the `sqlpipe.yaml` keys above (`source`, `target`, `tables`) and the `--dry-run` flag are plausible placeholders \u2014 check them against the actual tool before publishing.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 15191,
+  "cost_usd": null,
+  "model": "claude-opus-5-medium",
+  "condition": "baseline",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 136,
+    "sentences": 12,
+    "mean_sentence_words": 11.3,
+    "longest_sentence_words": 37,
+    "violations": {
+      "sentence_over_limit": 1,
+      "contraction": 1,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 2
+    },
+    "violations_total": 4,
+    "violations_per_100w": 2.94
+  }
+}

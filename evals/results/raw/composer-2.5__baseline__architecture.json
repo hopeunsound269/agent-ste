@@ -1,0 +1,32 @@
+{
+  "text": "SQLPipe is a streaming data-export pipeline that moves relational data from PostgreSQL to Amazon S3 without materializing the full result set in memory. The reader process issues a cursor-backed query and streams rows in fixed-size batches, bounding resident memory while sustaining steady read throughput from the database. Each batch is passed to the converter, which encodes rows into Apache Parquet row groups with preserved column types and compression suitable for analytics workloads. The uploader consumes completed row groups and writes them to S3 via multipart upload: object bodies are split into parts, each part retried independently on transient network or service errors, then composed into a single durable object. Reader, converter, and uploader operate as concurrent stages with buffered handoffs, so extraction, transformation, and upload overlap end to end.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 33033,
+  "cost_usd": null,
+  "model": "composer-2.5",
+  "condition": "baseline",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 129,
+    "sentences": 6,
+    "mean_sentence_words": 21.5,
+    "longest_sentence_words": 25,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "text": "# Getting Started\n\nThis guide tells you how to install sqlpipe, create a configuration file, and run your first pipeline.\n\n## Install sqlpipe\n\nRun this command in your terminal:\n\n```bash\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nThe install script downloads the sqlpipe binary. The script adds sqlpipe to your PATH. If your shell does not find the `sqlpipe` command, restart the terminal.\n\n## Configure sqlpipe\n\nCreate a file named `sqlpipe.yaml` in your project directory. This file is your pipeline configuration.\n\nAdd a source database connection to the file. Add a target database connection to the file. List the pipeline steps that define the data flow.\n\nIf you need a starting point, copy the sample `sqlpipe.yaml` from the sqlpipe repository. Change the database URLs and table names for your environment.\n\n## Run your first pipeline\n\nChange to the directory that contains `sqlpipe.yaml`.\n\nRun this command:\n\n```bash\nsqlpipe run --config sqlpipe.yaml\n```\n\nSqlpipe reads the configuration file. It runs each pipeline step in order. It shows progress in the terminal.\n\nIf the command fails, read the error output. Fix the problem in `sqlpipe.yaml`. Run the same command again.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 50161,
+  "cost_usd": null,
+  "model": "composer-2.5",
+  "condition": "agent-ste",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 161,
+    "sentences": 20,
+    "mean_sentence_words": 8.1,
+    "longest_sentence_words": 17,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

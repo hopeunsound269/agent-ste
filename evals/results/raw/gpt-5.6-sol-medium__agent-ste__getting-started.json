@@ -1,0 +1,32 @@
+{
+  "text": "# Getting started\n\nComplete the following procedure.\n\n## 1. Install sqlpipe\n\nRun the following command in your terminal:\n\n```sh\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nWait for the installer to finish.\n\nAfter the installation finishes, start a new shell session.\n\nRun `sqlpipe --version` to make sure that your shell can find the command.\n\n## 2. Create the configuration file\n\nCreate a file named `sqlpipe.yaml` in your project directory.\n\nAdd the required source connection values.\n\nAdd the required destination connection values.\n\nAdd the pipeline options for your data transfer.\n\nUse environment variables for passwords and access tokens.\n\nDo not write secret values directly in `sqlpipe.yaml`.\n\nSave the file.\n\nIf you need the available field names, read the sqlpipe configuration reference.\n\n## 3. Run the pipeline\n\nRun your first pipeline with the following command:\n\n```sh\nsqlpipe run --config sqlpipe.yaml\n```\n\nIf sqlpipe reports a configuration error, read the field name in the error message.\n\nCorrect the named field in `sqlpipe.yaml`.\n\nRun the command again.\n\nIf the run succeeds, read the output summary.\n\nMake sure that the summary shows the expected row count.\n\nExamine the destination data before you use it in another process.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 35303,
+  "cost_usd": null,
+  "model": "gpt-5.6-sol-medium",
+  "condition": "agent-ste",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 161,
+    "sentences": 20,
+    "mean_sentence_words": 8.1,
+    "longest_sentence_words": 14,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

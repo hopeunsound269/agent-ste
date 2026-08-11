@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe v2.0 Release Notes\n\nBreaking change\n\nThe `/v2/users` endpoint no longer returns a `name` field. The endpoint returns `first_name` and `last_name` fields. Clients that read `name` fail after the upgrade. This release keeps the rest of the `/v2/users` response shape the same.\n\nMigration\n\nIf your client reads the `name` field, change the client to read `first_name` and `last_name`. Map the two fields in your code before you send the response to users.\n\nNew flag\n\nThe `--incremental` flag is available for export and sync commands. The flag processes only new and changed rows. When you omit the flag, full runs still work.\n\nPerformance\n\nParquet writes complete 40% faster than in the previous release. Large exports finish in less time because the write path uses less CPU.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 36729,
+  "cost_usd": null,
+  "model": "cursor-grok-4.5-medium",
+  "condition": "agent-ste",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 126,
+    "sentences": 11,
+    "mean_sentence_words": 11.5,
+    "longest_sentence_words": 17,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

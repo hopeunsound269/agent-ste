@@ -1,0 +1,32 @@
+{
+  "text": "# Incident: Elevated API Errors (HTTP 502)\n\n**Status:** Resolved\n\nBetween 14:02 UTC and 14:31 UTC on August 11, 2026, 12% of API requests failed with HTTP 502.\n\nAt 14:02 UTC, a deploy removed the cache warmup step from the service startup sequence. The service accepted traffic before the cache warmed. Backend instances returned HTTP 502 responses to clients during this period.\n\nAt 14:27 UTC, we reverted the deploy. The revert restored the cache warmup step on service startup. API error rates returned to normal at 14:31 UTC.\n\nAll API endpoints were affected during the incident window.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 44388,
+  "cost_usd": null,
+  "model": "composer-2.5",
+  "condition": "agent-ste",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 89,
+    "sentences": 8,
+    "mean_sentence_words": 11.1,
+    "longest_sentence_words": 20,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

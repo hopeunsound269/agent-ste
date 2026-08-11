@@ -1,0 +1,32 @@
+{
+  "text": "**Incident: HTTP 502 errors on the API**\n\n**Status:** Resolved\n\n**Summary**\nBetween 14:02 and 14:31 UTC, 12% of API requests failed with HTTP 502. A deploy at 14:02 removed the cache warmup step. The API servers then started with an empty cache. Those servers timed out on many requests, and the load balancer returned HTTP 502 to clients.\n\n**Timeline**\n- 14:02 UTC \u2014 The deploy started. The error rate increased.\n- 14:27 UTC \u2014 We reverted the deploy.\n- 14:31 UTC \u2014 The error rate returned to normal.\n\n**Next steps**\nWe restore the cache warmup step. We also add a test that blocks a deploy that removes this step.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 14653,
+  "cost_usd": null,
+  "model": "claude-opus-5-medium",
+  "condition": "agent-ste",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 108,
+    "sentences": 10,
+    "mean_sentence_words": 10.4,
+    "longest_sentence_words": 22,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

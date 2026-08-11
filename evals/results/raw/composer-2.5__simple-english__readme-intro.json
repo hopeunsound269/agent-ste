@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe is a command-line tool. It syncs data from Postgres tables to Amazon S3. The tool writes Parquet files that mirror your table structure. Each exported table goes to an S3 bucket you specify. S3 stores the files for downstream use. You define the Postgres source and S3 destination in a configuration file.\n\nAnalytics pipelines, backups, and data sharing are common use cases for sqlpipe. You can run the tool on a schedule with cron. If you need fresh data, you can also run a sync. Consumers load Parquet from S3 without a live connection to Postgres. The columnar format keeps files small. Warehouse tools such as Athena, Spark, and DuckDB can query the files.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 56342,
+  "cost_usd": null,
+  "model": "composer-2.5",
+  "condition": "simple-english",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 115,
+    "sentences": 12,
+    "mean_sentence_words": 9.6,
+    "longest_sentence_words": 12,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

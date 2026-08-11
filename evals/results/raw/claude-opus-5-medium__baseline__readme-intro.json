@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe is a command-line tool for moving Postgres tables into S3 as Parquet files. Point it at a database and a bucket, tell it which tables you care about, and it handles the rest: reading rows in batches, mapping Postgres types to their Parquet equivalents, compressing the output, and writing partitioned files under a prefix you control. Runs are incremental by default, so after the first full copy sqlpipe only pulls rows that changed since the last successful sync.\n\nIt is built for the space between a one-off `COPY` script and a full ingestion platform. There is no daemon, no orchestrator, and no state store to operate \u2014 configuration lives in a single file, progress is tracked in a small metadata table, and every run is a plain process you can trigger from cron, a CI job, or your existing scheduler.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 10402,
+  "cost_usd": null,
+  "model": "claude-opus-5-medium",
+  "condition": "baseline",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 141,
+    "sentences": 6,
+    "mean_sentence_words": 23.5,
+    "longest_sentence_words": 46,
+    "violations": {
+      "sentence_over_limit": 1,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.71
+  }
+}

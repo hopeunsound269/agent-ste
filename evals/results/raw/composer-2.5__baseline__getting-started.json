@@ -1,0 +1,32 @@
+{
+  "text": "# Getting started\n\nInstall sqlpipe with:\n\n```bash\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nAfter installation, confirm it is available:\n\n```bash\nsqlpipe --version\n```\n\n## Configure\n\nCreate a `sqlpipe.yaml` file in your project. It defines your source and destination databases, the tables or queries to sync, and any transforms or filters. Start with a minimal config that points at your connections and lists the pipelines you want to run.\n\n## First run\n\nRun your pipeline with:\n\n```bash\nsqlpipe run --config sqlpipe.yaml\n```\n\nsqlpipe reads the config, connects to your databases, and streams data from source to destination. Check the output for connection status, row counts, and any errors.\n\nEdit `sqlpipe.yaml` to add pipelines or adjust settings, then run the same command again. For scheduled or repeated syncs, use your scheduler or CI to invoke `sqlpipe run` on a cadence that fits your workflow.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 12858,
+  "cost_usd": null,
+  "model": "composer-2.5",
+  "condition": "baseline",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 116,
+    "sentences": 10,
+    "mean_sentence_words": 11.6,
+    "longest_sentence_words": 20,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 2
+    },
+    "violations_total": 2,
+    "violations_per_100w": 1.72
+  }
+}

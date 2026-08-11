@@ -1,0 +1,12 @@
+{
+  "model": "gpt-5.6-luna-medium",
+  "scenario": "release-notes",
+  "order1_theirs_first": {
+    "a_score": 8,
+    "b_score": 9
+  },
+  "order2_ours_first": {
+    "a_score": 8,
+    "b_score": 9
+  }
+}

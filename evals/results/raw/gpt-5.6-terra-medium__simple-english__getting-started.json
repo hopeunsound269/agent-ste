@@ -1,0 +1,32 @@
+{
+  "text": "## Getting started\n\n1. Install sqlpipe with `curl -sSL https://get.sqlpipe.dev | sh`.\n2. Create a file named `sqlpipe.yaml`.\n3. Add the connection details for the source database to `sqlpipe.yaml`.\n4. Add the connection details for the destination database to `sqlpipe.yaml`.\n5. Add the pipeline settings to `sqlpipe.yaml`.\n6. Make sure that each connection string has the correct host, port, database, user, and password.\n7. Make sure that the source user can read the source database.\n8. Make sure that the destination user can write the destination database.\n9. Run `sqlpipe run --config sqlpipe.yaml`.\n\nsqlpipe reads the configuration from `sqlpipe.yaml`. It then connects to both databases and starts the pipeline.\n\nCAUTION: Do not add `sqlpipe.yaml` to a public repository. The file can contain database credentials.\n\nIf the command reports an error, read the error message. Then correct the configuration and run the command again.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 15809,
+  "cost_usd": null,
+  "model": "gpt-5.6-terra-medium",
+  "condition": "simple-english",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 140,
+    "sentences": 15,
+    "mean_sentence_words": 8.7,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 1
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.71
+  }
+}

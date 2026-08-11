@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe is a command-line tool that syncs data from Postgres tables to S3. The tool writes the data as Parquet files. You run sqlpipe from a terminal. The tool reads rows from a Postgres database and writes them to an S3 bucket. Each table becomes a separate Parquet file.\n\nThis tool helps you move data from a database to object storage. You can use the data for analysis or for a backup. sqlpipe reads your configuration and connects to the database. Then sqlpipe exports each table to S3. You can schedule sqlpipe to run at regular intervals. This schedule keeps an up-to-date copy of your data in S3.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 32728,
+  "cost_usd": null,
+  "model": "glm-5.2-max",
+  "condition": "simple-english",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 108,
+    "sentences": 11,
+    "mean_sentence_words": 9.8,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

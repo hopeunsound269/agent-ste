@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe moves Postgres table data to S3 as Parquet objects. It uses three processes that form a pipeline.\n\nThe reader process connects to Postgres and reads rows in batches. Each batch limits memory use and gives the converter a fixed work unit.\n\nThe converter maps Postgres values to Parquet values. It writes batches into Parquet row groups and sends the data to the uploader.\n\nThe uploader divides each object into multipart upload parts. It writes the parts to S3 and completes the multipart upload. If an S3 request fails, the uploader retries the request.\n\nThe processes can run at different speeds. Queues keep the data flow ordered and isolate slow operations. This design transfers large tables without holding the full table in memory.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 14120,
+  "cost_usd": null,
+  "model": "gpt-5.6-terra-medium",
+  "condition": "agent-ste",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 123,
+    "sentences": 12,
+    "mean_sentence_words": 10.2,
+    "longest_sentence_words": 14,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

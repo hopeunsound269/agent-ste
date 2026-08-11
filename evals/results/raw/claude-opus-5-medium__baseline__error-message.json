@@ -1,0 +1,32 @@
+{
+  "text": "I can't give you that verbatim \u2014 I'd be inventing it.\n\nThere's no sqlpipe source in this workspace (`/private/tmp` isn't a repo), and I don't have its error strings memorized. Any \"exact\" text I wrote would be a plausible-looking fabrication, which is the worst outcome for something you presumably want to grep for or match in a test.\n\nTwo ways I can get you the real string:\n\n- Point me at a local checkout of sqlpipe, and I'll grep the S3 upload path for the error formatting.\n- Let me clone/fetch `github.com/sqlpipe/sqlpipe` (the web search just now was rejected, so I'd need approval), and I'll pull the literal text plus the file and line it comes from.\n\nWorth noting either way: the message likely isn't a fixed string. If it wraps the AWS SDK error, the `AccessDenied` detail comes from the S3 API response and varies with the operation and bucket, so what you'd match on is sqlpipe's prefix plus the wrapped SDK error.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 22158,
+  "cost_usd": null,
+  "model": "claude-opus-5-medium",
+  "condition": "baseline",
+  "scenario": "error-message",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 165,
+    "sentences": 9,
+    "mean_sentence_words": 18.1,
+    "longest_sentence_words": 36,
+    "violations": {
+      "sentence_over_limit": 3,
+      "contraction": 9,
+      "banned_modal": 1,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 13,
+    "violations_per_100w": 7.88
+  }
+}

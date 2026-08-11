@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe v2.0 Release Notes\n\nThis release includes a breaking API change, a new sync option, and significant performance improvements.\n\n**Breaking change:** The `name` field in the `/v2/users` endpoint has been split into `first_name` and `last_name`. Clients that read or write `name` must update to use the new fields; requests including the old field will be rejected.\n\n**New:** A `--incremental` flag has been added, allowing pipelines to transfer only rows changed since the last run instead of performing a full copy. This can dramatically reduce sync times for large, slowly changing tables.\n\n**Performance:** Parquet writes are now 40% faster thanks to internal optimizations in the write path.\n\nPlease review the breaking change before upgrading production deployments.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 14257,
+  "cost_usd": null,
+  "model": "claude-fable-5-medium",
+  "condition": "baseline",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 116,
+    "sentences": 7,
+    "mean_sentence_words": 16.6,
+    "longest_sentence_words": 24,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 2,
+      "ing_clause": 1,
+      "semicolon": 1,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 4,
+    "violations_per_100w": 3.45
+  }
+}

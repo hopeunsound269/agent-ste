@@ -1,0 +1,32 @@
+{
+  "text": "# sqlpipe v2.0\n\n## API change\n\nWARNING: Update clients that use `/v2/users` before you install sqlpipe v2.0. This release removes the `name` field from user responses. The endpoint now returns `first_name` and `last_name`. Clients that read `name` can fail after the update.\n\nReplace each `name` reference with the applicable new field. Then do a test of each client.\n\n## Incremental transfers\n\nThe new `--incremental` flag transfers only records that changed after the previous transfer. This option decreases transfer time and network use for repeated jobs.\n\nAdd `--incremental` to a sqlpipe command to use this function.\n\n## Parquet performance\n\nParquet writes are 40% faster than in v1.x under the same test conditions. This change decreases the duration of jobs that write large Parquet data sets.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 16336,
+  "cost_usd": null,
+  "model": "gpt-5.6-sol-medium",
+  "condition": "simple-english",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 113,
+    "sentences": 11,
+    "mean_sentence_words": 10.2,
+    "longest_sentence_words": 13,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

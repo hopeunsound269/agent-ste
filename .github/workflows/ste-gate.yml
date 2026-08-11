@@ -1,0 +1,32 @@
+name: STE gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Linter self-test
+        run: python3 evals/ste_lint.py --self-test
+      - name: README prose lints clean under the benchmark linter
+        run: python3 evals/lint_readme.py README.md
+        working-directory: .
+      - name: SKILL.md frontmatter is valid
+        run: |
+          python3 - <<'EOF'
+          import pathlib, re, sys
+          text = pathlib.Path("skills/agent-ste/SKILL.md").read_text()
+          m = re.match(r"^---\n(.*?)\n---\n", text, re.S)
+          assert m, "missing frontmatter"
+          front = m.group(1)
+          assert re.search(r"^name:\s*\S", front, re.M), "missing name"
+          assert re.search(r"^description:", front, re.M), "missing description"
+          print("frontmatter OK")
+          EOF

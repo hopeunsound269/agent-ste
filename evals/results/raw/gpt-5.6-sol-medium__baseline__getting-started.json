@@ -1,0 +1,32 @@
+{
+  "text": "## Getting started\n\nInstall sqlpipe with the official installation script:\n\n```sh\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nConfirm the installation:\n\n```sh\nsqlpipe --version\n```\n\nNext, create `sqlpipe.yaml` in your project directory. Define the source, destination, and pipeline settings required for your data transfer:\n\n```yaml\nsource:\n  type: postgres\n  connection: ${SOURCE_DATABASE_URL}\n\ndestination:\n  type: postgres\n  connection: ${DESTINATION_DATABASE_URL}\n\npipeline:\n  table: public.customers\n```\n\nReplace the example values with settings supported by your source and destination. Keep credentials in environment variables instead of committing them to the configuration file.\n\nRun the pipeline:\n\n```sh\nsqlpipe run --config sqlpipe.yaml\n```\n\nsqlpipe reads the configuration, connects to both systems, and starts transferring data. Review the command output for connection or validation errors. After the first successful run, add more tables or adjust pipeline options in `sqlpipe.yaml` to match your workflow.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 23254,
+  "cost_usd": null,
+  "model": "gpt-5.6-sol-medium",
+  "condition": "baseline",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 96,
+    "sentences": 10,
+    "mean_sentence_words": 9.6,
+    "longest_sentence_words": 18,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 1
+    },
+    "violations_total": 1,
+    "violations_per_100w": 1.04
+  }
+}

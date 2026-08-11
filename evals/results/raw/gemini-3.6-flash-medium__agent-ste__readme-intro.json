@@ -1,0 +1,32 @@
+{
+  "text": "`sqlpipe` is a command-line tool that exports data from PostgreSQL databases to Amazon S3. The tool reads tables from your database and writes the data to S3 as Apache Parquet files. You can run `sqlpipe` as a single job or set a schedule for recurring data syncs. `sqlpipe` converts PostgreSQL data types into standard Parquet data types automatically.\n\nParquet files reduce storage costs and increase query speed in data warehouses like Snowflake, BigQuery, and AWS Athena. If you need to sync large tables, `sqlpipe` uses multipart uploads to transfer files efficiently. If a network error occurs during a transfer, `sqlpipe` retries the failed part automatically. You must provide database credentials and AWS access keys in environment variables or in a configuration file.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 29273,
+  "cost_usd": null,
+  "model": "gemini-3.6-flash-medium",
+  "condition": "agent-ste",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 122,
+    "sentences": 8,
+    "mean_sentence_words": 15.2,
+    "longest_sentence_words": 18,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

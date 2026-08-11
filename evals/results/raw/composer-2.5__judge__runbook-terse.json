@@ -1,0 +1,12 @@
+{
+  "model": "composer-2.5",
+  "scenario": "runbook-terse",
+  "order1_theirs_first": {
+    "a_score": 9,
+    "b_score": 8
+  },
+  "order2_ours_first": {
+    "a_score": 7,
+    "b_score": 9
+  }
+}

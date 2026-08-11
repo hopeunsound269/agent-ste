@@ -1,0 +1,32 @@
+{
+  "text": "# sqlpipe v2.0\n\nsqlpipe v2.0 improves export performance and adds incremental runs, with one breaking API change for user records.\n\n## Breaking changes\n\nThe `/v2/users` endpoint no longer returns a single `name` field. User records now expose `first_name` and `last_name` separately. Update any pipelines, schemas, or downstream jobs that read user names before upgrading.\n\n## New features\n\n- **`--incremental` flag** \u2014 Run exports against only new or changed rows instead of full table scans. Use it for scheduled jobs to shorten run time and reduce load on source databases.\n\n## Performance\n\n- **Parquet writes are ~40% faster** \u2014 Large exports to Parquet should finish noticeably sooner, with lower CPU and I/O overhead during write-heavy workloads.\n\n## Upgrade notes\n\nReview integrations that consume `/v2/users`, then test with `--incremental` on a non-production schedule before rolling out broadly.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 12127,
+  "cost_usd": null,
+  "model": "composer-2.5",
+  "condition": "baseline",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 123,
+    "sentences": 8,
+    "mean_sentence_words": 15.1,
+    "longest_sentence_words": 23,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 1,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.81
+  }
+}

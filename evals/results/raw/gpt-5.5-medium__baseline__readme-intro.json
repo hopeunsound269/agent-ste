@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe is a CLI tool for moving Postgres table data into S3 as Parquet files. It is built for teams that want a simple, repeatable way to export relational data into a lake-friendly format without standing up a full data platform first.\n\nUse sqlpipe to sync whole tables or selected datasets from Postgres, write them as compressed Parquet, and store them in S3 for analytics, archival, or downstream processing. It keeps the workflow close to the command line: configure a source database, choose the tables you need, point at an S3 bucket, and run the sync. The result is portable columnar data that works well with tools like Athena, Spark, DuckDB, and modern data warehouses.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 15446,
+  "cost_usd": null,
+  "model": "gpt-5.5-medium",
+  "condition": "baseline",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 115,
+    "sentences": 6,
+    "mean_sentence_words": 19.2,
+    "longest_sentence_words": 27,
+    "violations": {
+      "sentence_over_limit": 2,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 2,
+    "violations_per_100w": 1.74
+  }
+}

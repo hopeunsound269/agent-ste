@@ -1,0 +1,32 @@
+{
+  "text": "## Getting Started\n\nGet up and running with `sqlpipe` in three quick steps.\n\n### 1. Install `sqlpipe`\nInstall the CLI tool directly using the automated installation script:\n\n```bash\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\n### 2. Configure `sqlpipe.yaml`\nCreate a configuration file named `sqlpipe.yaml` in your project directory to define your source and target database connections alongside your data pipeline settings:\n\n```yaml\nsource:\n  type: postgres\n  connection_string: \"postgres://user:pass@localhost:5432/source_db\"\ntarget:\n  type: postgres\n  connection_string: \"postgres://user:pass@localhost:5432/target_db\"\npipes:\n  - name: sync_users\n    query: \"SELECT id, email, created_at FROM users\"\n    target_table: users\n```\n\n### 3. Run Your First Pipeline\nExecute `sqlpipe` using your newly created configuration file to start transferring data:\n\n```bash\nsqlpipe run --config sqlpipe.yaml\n```\n\nOnce executed, `sqlpipe` validates your configuration, connects to the specified databases, and streams your query results smoothly from source to target.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 17054,
+  "cost_usd": null,
+  "model": "gemini-3.6-flash-medium",
+  "condition": "baseline",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 76,
+    "sentences": 5,
+    "mean_sentence_words": 15.2,
+    "longest_sentence_words": 23,
+    "violations": {
+      "sentence_over_limit": 2,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 1
+    },
+    "violations_total": 3,
+    "violations_per_100w": 3.95
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "text": "Between 14:02 and 14:31 UTC, approximately 12% of API requests failed with HTTP 502 errors. The issue was caused by a deployment that removed a required cache warmup step. We reverted the deployment at 14:27 UTC, and service recovered shortly afterward. We are restoring safeguards to ensure cache warmup remains part of future releases and reviewing deployment validation procedures.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 9713,
+  "cost_usd": null,
+  "model": "gpt-5.6-terra-medium",
+  "condition": "baseline",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 59,
+    "sentences": 4,
+    "mean_sentence_words": 14.8,
+    "longest_sentence_words": 18,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

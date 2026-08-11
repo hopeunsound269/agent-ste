@@ -1,0 +1,32 @@
+{
+  "text": "Connection timeouts to Postgres\n\nIf sqlpipe hangs or fails when connecting to Postgres, first verify the host and port are reachable (`nc -zv <host> 5432`). Timeouts usually stem from firewall or security-group rules blocking the connection, an incorrect host, or a database that is not accepting external connections. Increase the timeout with `--connection-timeout` if the server is slow to respond, and confirm SSL settings match the server's requirements (`sslmode=require`). Check that credentials and the database name are correct, as authentication delays can resemble timeouts.\n\nS3 permission errors\n\n\"Access Denied\" errors indicate the IAM identity lacks the needed permissions. Ensure the role or user has `s3:GetObject`, `s3:PutObject`, and `s3:ListBucket` on the target bucket and its objects. Verify the bucket region matches your configuration, confirm credentials are exported (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`), and check that bucket policies or SCPs are not overriding your permissions.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 12324,
+  "cost_usd": null,
+  "model": "claude-opus-4-8-medium",
+  "condition": "baseline",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 146,
+    "sentences": 7,
+    "mean_sentence_words": 20.9,
+    "longest_sentence_words": 28,
+    "violations": {
+      "sentence_over_limit": 4,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 2,
+      "synonym_rotation": 4
+    },
+    "violations_total": 10,
+    "violations_per_100w": 6.85
+  }
+}

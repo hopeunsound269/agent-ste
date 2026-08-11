@@ -1,0 +1,32 @@
+{
+  "text": "## Getting Started\n\nsqlpipe moves data from a source database to a target database. This section shows you how to install sqlpipe, configure it, and run your first job.\n\n### Install sqlpipe\n\nRun this command to install sqlpipe:\n\n```\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\n### Configure sqlpipe\n\nsqlpipe reads its settings from a file named `sqlpipe.yaml`. Create this file in your working directory. Add the source database and the target database to the file. Then set the connection values for each database.\n\n### Run your first job\n\n1. Make sure that the `sqlpipe.yaml` file is in your working directory.\n2. Run this command:\n\n```\nsqlpipe run --config sqlpipe.yaml\n```\n\n3. If the command fails, read the log for the error.\n\nsqlpipe reads the source database and writes the data to the target database. The command shows the progress on the screen.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 10244,
+  "cost_usd": null,
+  "model": "claude-opus-4-8-medium",
+  "condition": "simple-english",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 116,
+    "sentences": 12,
+    "mean_sentence_words": 9.4,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

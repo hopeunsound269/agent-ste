@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe is a streaming ETL pipeline that moves data from Postgres to S3 as Parquet with three cooperating stages.\n\nA reader process issues queries against Postgres and pulls result rows in bounded batches, keeping memory predictable and allowing downstream work to start before the full result set is available. Each batch is handed to a converter that maps relational columns into Parquet schemas and materializes Parquet row groups, so encoding and compression happen incrementally rather than as a single end-of-query write.\n\nAn uploader receives completed Parquet buffers and writes them to S3 with multipart upload. Parts are sent concurrently where possible; failed part uploads are retried with backoff so transient network or API errors do not abort the whole run. Together, the reader, converter, and uploader form a pipeline: rows stream in, become columnar row groups, and land as durable multipart objects in object storage.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 17681,
+  "cost_usd": null,
+  "model": "cursor-grok-4.5-medium",
+  "condition": "baseline",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 145,
+    "sentences": 7,
+    "mean_sentence_words": 20.7,
+    "longest_sentence_words": 32,
+    "violations": {
+      "sentence_over_limit": 2,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 1,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 3,
+    "violations_per_100w": 2.07
+  }
+}

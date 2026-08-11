@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe uses three processes to move PostgreSQL data to Amazon S3 as Parquet objects. The reader process opens a PostgreSQL connection and streams rows in batches with a fixed row limit. This limit keeps memory use predictable and gives the pipeline a clear unit for progress tracking. The converter process receives each batch and encodes its rows as a Parquet row group. A row group stores column data together, so downstream readers can select columns without reading unrelated data.\n\nThe uploader process receives completed row groups and writes them as multipart objects to S3. Multipart upload divides each object into parts and sends the parts separately. The uploader retries failed part transfers and repeats the completion request after a transient storage error. Each process reports errors at its own boundary. The pipeline preserves batch order while it transfers data from PostgreSQL to S3.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 19359,
+  "cost_usd": null,
+  "model": "gpt-5.6-luna-medium",
+  "condition": "agent-ste",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 143,
+    "sentences": 10,
+    "mean_sentence_words": 14.3,
+    "longest_sentence_words": 17,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

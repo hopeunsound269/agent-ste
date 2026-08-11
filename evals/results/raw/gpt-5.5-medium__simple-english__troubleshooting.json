@@ -1,0 +1,32 @@
+{
+  "text": "## Troubleshooting\n\n### Postgres Connection Timeouts\n\nsqlpipe cannot reach the Postgres port. The command stops with `dial tcp: i/o timeout`.\n\n1. Make sure that the sqlpipe host can reach the Postgres port.\n2. Make sure that the security group or firewall allows traffic to the database.\n3. If the database uses a private network, connect from the same network.\n4. If the network is slow, increase the timeout value in the configuration.\n\n### S3 Permission Errors\n\nS3 rejects the request. The command stops with an access error.\n\n1. Make sure that the AWS credentials are correct.\n2. Make sure that the IAM policy allows `s3:GetObject`, `s3:PutObject`, and `s3:ListBucket`.\n3. Make sure that the bucket name and object path are correct.\n4. If the bucket uses SSE-KMS, make sure that the policy allows use of the KMS key.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 16623,
+  "cost_usd": null,
+  "model": "gpt-5.5-medium",
+  "condition": "simple-english",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 128,
+    "sentences": 12,
+    "mean_sentence_words": 10.0,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

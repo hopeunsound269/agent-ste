@@ -1,0 +1,32 @@
+{
+  "text": "## Troubleshooting\n\n### Connection timeouts to Postgres\n\nIf sqlpipe cannot connect to Postgres, the command stops and shows a timeout error.\n\n1. Make sure that the Postgres host accepts connections on the port you set.\n2. Make sure that the network lets your machine reach the host.\n3. Increase the timeout value for the connection in the configuration.\n\nRun the command again.\n\n### S3 permission errors\n\nIf sqlpipe cannot read or write the S3 bucket, the command stops and shows a permission error.\n\n1. Make sure that the access key and the secret key are correct.\n2. Make sure that the key has the `s3:GetObject` and `s3:PutObject` permissions for the bucket.\n3. Make sure that the bucket name and the region match the configuration.\n\nRun the command again.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 20174,
+  "cost_usd": null,
+  "model": "glm-5.2-max",
+  "condition": "agent-ste",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 117,
+    "sentences": 10,
+    "mean_sentence_words": 11.1,
+    "longest_sentence_words": 17,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

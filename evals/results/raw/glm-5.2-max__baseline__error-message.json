@@ -1,0 +1,32 @@
+{
+  "text": "I don't have reliable knowledge of the exact error message text that `sqlpipe` prints in that scenario, and I won't fabricate one. Could you help me find the source?\n\nA few options:I don't know the exact error message text `sqlpipe` prints in that scenario, and I won't make one up \u2014 guessing at \"exact\" text would be misleading. If you can point me at the source (a local path, repo, or URL), I'll read it and return the precise lines.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 19076,
+  "cost_usd": null,
+  "model": "glm-5.2-max",
+  "condition": "baseline",
+  "scenario": "error-message",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 80,
+    "sentences": 4,
+    "mean_sentence_words": 20.0,
+    "longest_sentence_words": 29,
+    "violations": {
+      "sentence_over_limit": 3,
+      "contraction": 5,
+      "banned_modal": 2,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 10,
+    "violations_per_100w": 12.5
+  }
+}

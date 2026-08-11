@@ -1,0 +1,32 @@
+{
+  "text": "# sqlpipe v2.0\n\n## Breaking change\n\nCAUTION: Update each client before you upgrade to v2.0. The `/v2/users` endpoint does not return the `name` field.\n\nThe endpoint returns two fields in place of `name`: `first_name` and `last_name`. A request that sends `name` fails with an error.\n\nTo update a client, do these steps:\n\n1. Replace each read of `name` with `first_name` and `last_name`.\n2. Replace each write of `name` with the two new fields.\n\n## New feature\n\nThe `--incremental` flag is new. With this flag, sqlpipe copies only the rows that changed after the last transfer.\n\n## Performance\n\nParquet writes are 40% faster than the writes in v1.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 13538,
+  "cost_usd": null,
+  "model": "claude-opus-5-medium",
+  "condition": "simple-english",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 99,
+    "sentences": 11,
+    "mean_sentence_words": 8.7,
+    "longest_sentence_words": 14,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

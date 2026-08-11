@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe is a lightweight command-line tool for exporting PostgreSQL tables directly to Parquet files on Amazon S3. It streams query results straight from your database, converts them to columnar Parquet format, and uploads them to your S3 bucket without the need for intermediate ETL infrastructure or heavyweight data pipelines.\n\nDesigned for engineers who need reliable, repeatable syncs, sqlpipe supports full-table and incremental exports, configurable partitioning, and schema inference, making it easy to feed downstream analytics tools like Athena, Redshift Spectrum, or Spark. With a simple configuration file and a single command, you can schedule syncs via cron or your favorite orchestrator, keeping your S3 data lake fresh with minimal operational overhead.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 10102,
+  "cost_usd": null,
+  "model": "claude-sonnet-5-medium",
+  "condition": "baseline",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 111,
+    "sentences": 4,
+    "mean_sentence_words": 27.8,
+    "longest_sentence_words": 33,
+    "violations": {
+      "sentence_over_limit": 3,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 1,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 4,
+    "violations_per_100w": 3.6
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe uses three processes to move Postgres data to S3. The reader process connects to Postgres and streams rows in batches. Each batch contains a limited number of rows from the source query. The reader sends each batch to the converter. The converter changes each batch into a Parquet row group. Each row group stores column data in a format that supports efficient reads. The converter sends completed row groups to the uploader. The uploader combines row groups into multipart S3 objects. It sends each object part to S3 and tracks the upload state. If an upload request fails, the uploader retries the request. The retry process uses a controlled delay between attempts. After all parts reach S3, the uploader completes the multipart upload. This design separates database reads, data conversion, and object storage.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 14787,
+  "cost_usd": null,
+  "model": "gpt-5.6-luna-medium",
+  "condition": "simple-english",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 134,
+    "sentences": 13,
+    "mean_sentence_words": 10.3,
+    "longest_sentence_words": 13,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

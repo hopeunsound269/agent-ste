@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe is a CLI tool that syncs Postgres tables to Amazon S3 as Parquet files. The tool connects to your Postgres database with the connection string that you give. It reads each selected table row by row. It writes the data to an S3 bucket in Parquet format. You start a sync with one command from your terminal.\n\nsqlpipe maps Postgres column types to Parquet fields. The output keeps the table name and the schema that you set. If a sync fails, the tool stops and shows the error. You can sync one table or many tables in one run. The files land in S3 ready for analytics tools that read Parquet.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 28786,
+  "cost_usd": null,
+  "model": "cursor-grok-4.5-medium",
+  "condition": "agent-ste",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 112,
+    "sentences": 10,
+    "mean_sentence_words": 11.2,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

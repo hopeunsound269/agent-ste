@@ -1,0 +1,32 @@
+{
+  "text": "# Incident Report\n\n**Date:** [Today's date]\n**Duration:** 14:02 \u2013 14:31 UTC (approx. 29 minutes)\n**Severity:** Partial service degradation\n**Impact:** ~12% of API requests returned HTTP 502 errors\n\n## Summary\n\nBetween 14:02 and 14:31 UTC, approximately 12% of API requests failed with HTTP 502 errors. The issue was caused by a deployment that inadvertently removed the cache warmup step, leading to cold-cache overload on the API backend.\n\n## Resolution\n\nThe problematic deployment was reverted at 14:27 UTC, and error rates returned to normal levels by 14:31 UTC. We have added a pre-deploy validation check to ensure the cache warmup step is preserved in future releases.\n\nWe apologize for any inconvenience this may have caused.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 9148,
+  "cost_usd": null,
+  "model": "glm-5.2-max",
+  "condition": "baseline",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 106,
+    "sentences": 6,
+    "mean_sentence_words": 17.7,
+    "longest_sentence_words": 30,
+    "violations": {
+      "sentence_over_limit": 1,
+      "contraction": 0,
+      "banned_modal": 1,
+      "perfect_tense": 2,
+      "ing_clause": 1,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 1
+    },
+    "violations_total": 6,
+    "violations_per_100w": 5.66
+  }
+}

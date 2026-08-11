@@ -1,0 +1,12 @@
+{
+  "model": "gpt-5.5-medium",
+  "scenario": "release-notes",
+  "order1_theirs_first": {
+    "a_score": 6,
+    "b_score": 9
+  },
+  "order2_ours_first": {
+    "a_score": 9,
+    "b_score": 6
+  }
+}

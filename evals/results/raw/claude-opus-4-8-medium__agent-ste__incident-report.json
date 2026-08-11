@@ -1,0 +1,32 @@
+{
+  "text": "Incident Report: API Errors from HTTP 502\n\nSummary: Between 14:02 and 14:31 UTC, 12% of API requests failed with HTTP 502.\n\nCause: A deploy at 14:02 removed the cache warmup step. The origin servers received too many uncached requests. The servers returned HTTP 502 for 12% of API requests.\n\nActions: The team examined the errors and found the bad deploy. The team reverted the deploy at 14:27. Error rates dropped to normal by 14:31.\n\nCurrent state: The API is stable. All requests succeed.\n\nNext steps: The team will add the cache warmup step back to the deploy. The team will add a test that makes sure that the step runs.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 9843,
+  "cost_usd": null,
+  "model": "claude-opus-4-8-medium",
+  "condition": "agent-ste",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 110,
+    "sentences": 15,
+    "mean_sentence_words": 7.2,
+    "longest_sentence_words": 13,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

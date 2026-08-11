@@ -1,0 +1,32 @@
+{
+  "text": "**Incident: Elevated API 502 errors**\n\nBetween 14:02 and 14:31 UTC, approximately 12% of API requests returned HTTP 502 errors. The issue began after a deployment that removed the cache warmup step. Without warmup, cold instances could not serve traffic reliably, which led to elevated gateway failures.\n\nWe reverted the deployment at 14:27 UTC. Error rates returned to normal shortly afterward, and the incident was resolved by 14:31 UTC.\n\nWe are reviewing our deployment process to ensure cache warmup remains in place and to add safeguards against similar regressions. We apologize for the disruption.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 15211,
+  "cost_usd": null,
+  "model": "composer-2.5",
+  "condition": "baseline",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 93,
+    "sentences": 7,
+    "mean_sentence_words": 13.1,
+    "longest_sentence_words": 20,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 1,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 1.08
+  }
+}

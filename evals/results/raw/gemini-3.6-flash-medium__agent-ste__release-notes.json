@@ -1,0 +1,32 @@
+{
+  "text": "`sqlpipe v2.0` Release Notes\n\n`sqlpipe v2.0` is available. This release contains breaking API changes, a new flag, and faster Parquet writes.\n\n## Performance improvements\n\nParquet writes are 40% faster in `sqlpipe v2.0`.\n\n## New features\n\nYou can use the new `--incremental` flag to process new data. If you set this flag, `sqlpipe` reads only records that changed since the last run.\n\n## Breaking API changes\n\nThe update splits the `name` field in the `/v2/users` endpoint into `first_name` and `last_name`. The single `name` field no longer exists.\n\nIf you read data from the `/v2/users` endpoint, complete these steps:\n1. Update your client code to read `first_name` and `last_name`.\n2. Test your client application in a test environment.\n3. Deploy your updated client code.\n\nMake sure that your client code works with the new fields before you upgrade `sqlpipe`.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 45025,
+  "cost_usd": null,
+  "model": "gemini-3.6-flash-medium",
+  "condition": "agent-ste",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 128,
+    "sentences": 12,
+    "mean_sentence_words": 10.4,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

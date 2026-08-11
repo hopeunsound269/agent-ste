@@ -1,0 +1,32 @@
+{
+  "text": "# Getting started\n\nThis section shows how to install sqlpipe and run your first job.\n\n## What sqlpipe does\n\nsqlpipe moves rows from a source database to a target database. The tool reads a SQL query from your configuration file. The tool runs the query on the source database. The tool writes the rows to the target database.\n\n## Install sqlpipe\n\n1. Run the install command:\n   ```\n   curl -sSL https://get.sqlpipe.dev | sh\n   ```\n2. Make sure that the `sqlpipe` command is on your `PATH`.\n3. Run `sqlpipe --version` to make sure that the install succeeded.\n\n## Configure sqlpipe\n\nsqlpipe reads its configuration from a YAML file.\n\n1. Create a file with the name `sqlpipe.yaml`.\n2. Set the `source` field to your input database.\n3. Set the `target` field to your output database.\n4. Set the `query` field to the SQL that selects your rows.\n\n## Run your first job\n\n1. Open a terminal in the folder that contains `sqlpipe.yaml`.\n2. Run the command:\n   ```\n   sqlpipe run --config sqlpipe.yaml\n   ```\n3. Read the output. The tool shows the count of rows that it moved.\n4. If the command fails, read the log file that sqlpipe writes to the current folder.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 36005,
+  "cost_usd": null,
+  "model": "glm-5.2-max",
+  "condition": "agent-ste",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 170,
+    "sentences": 18,
+    "mean_sentence_words": 8.8,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "text": "## Troubleshooting\n\n**Postgres connection timeouts:** Confirm the database host, port, and SSL settings in your sqlpipe connection string. Check that the database accepts inbound traffic from the machine running sqlpipe, including firewall rules, VPC security groups, and IP allowlists. Verify DNS resolution and test connectivity with `psql` using the same credentials. If the database is under load, increase the connection timeout and confirm that the server has available connection slots.\n\n**S3 permission errors:** Ensure the configured AWS credentials are active and belong to the expected account. The IAM principal needs permission to list the target bucket and read or write the relevant object prefix, such as `s3:ListBucket`, `s3:GetObject`, and `s3:PutObject`. Check bucket policies, explicit denies, KMS key permissions for encrypted objects, and the bucket region. Confirm the bucket name and prefix are correct, then retry with AWS CLI credentials matching sqlpipe\u2019s runtime environment.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 20508,
+  "cost_usd": null,
+  "model": "gpt-5.6-terra-medium",
+  "condition": "baseline",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 144,
+    "sentences": 8,
+    "mean_sentence_words": 18.0,
+    "longest_sentence_words": 27,
+    "violations": {
+      "sentence_over_limit": 2,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 3
+    },
+    "violations_total": 5,
+    "violations_per_100w": 3.47
+  }
+}

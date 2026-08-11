@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe is a command-line tool. sqlpipe copies Postgres tables to Amazon S3 as Parquet files. You give sqlpipe a source table and a target bucket. sqlpipe reads the rows, writes them to Parquet, and uploads the files to S3.\n\nsqlpipe runs one table or many tables in one command. Each sync is idempotent. If you run the same sync two times, sqlpipe writes the same output and does not create duplicate rows. sqlpipe writes each table to a separate prefix in the bucket. You can set the row count for each file, and you can set the compression codec.\n\nsqlpipe uses multipart upload for large tables. If a table is large, sqlpipe splits the data into many files. You control the schedule from cron or from your own scripts.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 15998,
+  "cost_usd": null,
+  "model": "claude-opus-4-8-medium",
+  "condition": "agent-ste",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 129,
+    "sentences": 12,
+    "mean_sentence_words": 10.8,
+    "longest_sentence_words": 19,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

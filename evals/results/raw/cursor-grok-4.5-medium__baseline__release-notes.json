@@ -1,0 +1,32 @@
+{
+  "text": "I'll use the release-notes skill and draft ~120 words covering the breaking name split, `--incremental`, and faster Parquet writes.## sqlpipe v2.0\n\nsqlpipe 2.0 ships a cleaner users API, smarter syncs, and faster exports.\n\n**Breaking: `/v2/users` name fields.** The single `name` field is now `first_name` and `last_name`. Update clients and mappings that still send or read `name`, or requests will fail.\n\n**New `--incremental` flag.** Pass `--incremental` to sync only what changed since the last run. Full refreshes stay available; use incremental when you want shorter jobs and less load on the source.\n\n**Parquet writes ~40% faster.** Export pipelines that land on Parquet should finish sooner with no format or schema changes on your side.\n\nUpgrade when you can absorb the users API change; then turn on `--incremental` where it fits and enjoy the quicker Parquet path.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 22957,
+  "cost_usd": null,
+  "model": "cursor-grok-4.5-medium",
+  "condition": "baseline",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 138,
+    "sentences": 7,
+    "mean_sentence_words": 19.6,
+    "longest_sentence_words": 34,
+    "violations": {
+      "sentence_over_limit": 1,
+      "contraction": 1,
+      "banned_modal": 1,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 2,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 2,
+      "synonym_rotation": 0
+    },
+    "violations_total": 7,
+    "violations_per_100w": 5.07
+  }
+}

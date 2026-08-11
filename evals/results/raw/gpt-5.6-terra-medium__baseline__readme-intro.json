@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe syncs PostgreSQL tables to Amazon S3 as efficient Parquet files. Define a source table, choose an S3 destination, and run a repeatable command that exports data in a format ready for analytics engines, data lakes, and downstream pipelines.\n\nBuilt for straightforward operational use, sqlpipe keeps table-to-file syncs simple without requiring custom export scripts or intermediate CSVs. Use it to move production data into S3 reliably, preserve column types, and make your Postgres data available wherever Parquet is supported.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 15662,
+  "cost_usd": null,
+  "model": "gpt-5.6-terra-medium",
+  "condition": "baseline",
+  "scenario": "readme-intro",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 79,
+    "sentences": 4,
+    "mean_sentence_words": 19.8,
+    "longest_sentence_words": 28,
+    "violations": {
+      "sentence_over_limit": 1,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 1.27
+  }
+}

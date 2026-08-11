@@ -1,0 +1,32 @@
+{
+  "text": "I'll look for existing sqlpipe docs so the troubleshooting section matches how the tool actually works.\n## Troubleshooting\n\n### Connection timeout to Postgres\n\nIf the command stops with a connection timeout, read the error message. The message shows the host and the port.\n\nMake sure that the host name is correct in the connection string. Make sure that the port number is correct in the connection string.\n\nIf the database is on a private network, run the command from a host that can reach the database. If you use a firewall, open the port for Postgres traffic to the database host.\n\nIf the timeout continues, increase the `connect_timeout` value in the connection string.\n\n### S3 permission errors\n\nIf the command stops with an S3 permission error, read the error message. The message shows the bucket name and the failed operation.\n\nMake sure that the AWS credentials can write objects to the bucket. Make sure that the IAM policy allows `s3:PutObject` on the bucket path.\n\nIf you use a role, attach the role to the host. Make sure that the role can write to the target bucket. Run the command again after you update the policy.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 63871,
+  "cost_usd": null,
+  "model": "composer-2.5",
+  "condition": "agent-ste",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 184,
+    "sentences": 15,
+    "mean_sentence_words": 12.3,
+    "longest_sentence_words": 19,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 1,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.54
+  }
+}

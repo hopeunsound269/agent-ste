@@ -1,0 +1,32 @@
+{
+  "text": "## Getting Started\n\nUse this procedure to install sqlpipe and run your first pipeline.\n\n1. Install sqlpipe with this command:\n\n```sh\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\n2. Open a terminal in your project directory.\n3. Create `sqlpipe.yaml`.\n4. Add the source, destination, and pipeline options to `sqlpipe.yaml`.\n5. Make sure that `sqlpipe.yaml` uses the names and credentials for your environment.\n6. Save `sqlpipe.yaml`.\n7. Run sqlpipe with this command:\n\n```sh\nsqlpipe run --config sqlpipe.yaml\n```\n\n8. Read the command output.\n9. If sqlpipe reports an error, fix the value that the message names.\n10. Run the command again.\n\nsqlpipe reads the configuration file and starts the pipeline. The command shows each step as it runs. The run ends when sqlpipe finishes the pipeline or reports an error.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 18382,
+  "cost_usd": null,
+  "model": "gpt-5.5-medium",
+  "condition": "agent-ste",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 115,
+    "sentences": 14,
+    "mean_sentence_words": 7.5,
+    "longest_sentence_words": 12,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.87
+  }
+}

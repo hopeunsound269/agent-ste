@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe v2.0 changes the `/v2/users` endpoint. The endpoint no longer returns a `name` field. It now returns two fields instead: `first_name` and `last_name`. This is a breaking change. If your code reads the `name` field, update it before you upgrade. Change the code to read `first_name` and `last_name`.\n\nsqlpipe v2.0 adds a new flag: `--incremental`. Use this flag with the sync command to process only new and changed rows. This flag reduces sync time for large tables and reduces load on the source database.\n\nsqlpipe v2.0 writes Parquet files 40% faster than v1. The Parquet writer change applies to every sync that uses the Parquet format.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 38860,
+  "cost_usd": null,
+  "model": "claude-sonnet-5-medium",
+  "condition": "agent-ste",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 109,
+    "sentences": 13,
+    "mean_sentence_words": 8.4,
+    "longest_sentence_words": 15,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

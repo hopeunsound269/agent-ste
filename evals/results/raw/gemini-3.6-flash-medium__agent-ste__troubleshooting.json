@@ -1,0 +1,32 @@
+{
+  "text": "# Troubleshooting\n\nThis section describes solutions for common errors in `sqlpipe`.\n\n## Postgres connection timeouts\n\nIf `sqlpipe` shows a connection timeout error, the tool cannot reach the Postgres server.\n\nIf the Postgres server runs on another host, make sure that the network route exists.\n\nIf firewall rules block port 5432, open port 5432 for incoming connections.\n\nIf you use a custom port, set the port in the configuration file or use the `--port` flag.\n\nTo test the connection, run this command:\n\n```bash\nsqlpipe test postgres\n```\n\nIf the connection fails again, read the server logs to find network problems.\n\n## S3 permission errors\n\nIf `sqlpipe` shows an `AccessDenied` error during S3 operations, AWS rejected the request.\n\nMake sure that your IAM user or IAM role has permissions for S3 actions.\n\nThe IAM policy must include these actions:\n\n- `s3:GetObject`\n- `s3:PutObject`\n- `s3:ListBucket`\n\nIf you use AWS environment variables, make sure that `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` contain valid credentials.\n\nTo test your S3 access, run this command:\n\n```bash\nsqlpipe test s3\n```\n\nIf the error continues, make sure that the S3 bucket policy allows your IAM role.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 38310,
+  "cost_usd": null,
+  "model": "gemini-3.6-flash-medium",
+  "condition": "agent-ste",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 167,
+    "sentences": 13,
+    "mean_sentence_words": 12.6,
+    "longest_sentence_words": 18,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

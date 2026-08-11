@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe exports data from Postgres to S3 in three stages. The reader process reads rows from the source database in batches. Each batch contains a fixed number of rows. The reader sends each batch to the converter.\n\nThe converter changes each batch into a Parquet row group. Parquet is a column format that keeps the file size small. The converter sends each row group to the uploader. The uploader writes the row groups to S3 as multipart objects. If an upload fails, the uploader sends the data again. The uploader tries three times before it stops.\n\nThe three stages run in sequence. The stages pass data one batch at a time. This design lets sqlpipe move large tables with little memory. The process does not load a full table into memory at one time.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 30271,
+  "cost_usd": null,
+  "model": "glm-5.2-max",
+  "condition": "simple-english",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 134,
+    "sentences": 14,
+    "mean_sentence_words": 9.6,
+    "longest_sentence_words": 13,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

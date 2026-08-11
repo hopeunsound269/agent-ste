@@ -1,0 +1,32 @@
+{
+  "text": "# sqlpipe v2.0 Release Notes\n\nsqlpipe v2.0 adds a new flag, improves Parquet write performance, and updates the `/v2/users` endpoint.\n\n## Breaking Changes\n\n`/v2/users` API endpoint:\n\nCAUTION: Update your API integration before you install sqlpipe v2.0. The `/v2/users` endpoint splits the `name` field into `first_name` and `last_name`. This change breaks existing API requests that use the `name` field.\n\n1. If you use the `/v2/users` endpoint, update your API client.\n2. Replace the `name` field in your requests with the `first_name` and `last_name` fields.\n\n## New Features\n\n`--incremental` flag:\n\nYou can use the new `--incremental` flag to process only new data during a job. If you specify the `--incremental` flag, sqlpipe reads only records that changed since the last run.\n\n## Performance Improvements\n\nParquet writes:\n\nParquet write operations are 40 percent faster in version 2.0. The file writer requires less processing time to write data to Parquet files.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 23639,
+  "cost_usd": null,
+  "model": "gemini-3.6-flash-medium",
+  "condition": "simple-english",
+  "scenario": "release-notes",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 134,
+    "sentences": 13,
+    "mean_sentence_words": 10.1,
+    "longest_sentence_words": 16,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

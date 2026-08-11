@@ -1,0 +1,12 @@
+{
+  "model": "glm-5.2-max",
+  "scenario": "architecture",
+  "order1_theirs_first": {
+    "a_score": 8,
+    "b_score": 6
+  },
+  "order2_ours_first": {
+    "a_score": 9,
+    "b_score": 5
+  }
+}

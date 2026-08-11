@@ -1,0 +1,32 @@
+{
+  "text": "## Getting started\n\nThis section shows you how to install sqlpipe, write a configuration file, and run your first job.\nComplete these steps in order:\n\n1. Install sqlpipe.\n2. Write the configuration file.\n3. Run your first job.\n\n### Install sqlpipe\n\nRun this command on your machine:\n\n```bash\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nThe installer puts the `sqlpipe` binary on your `PATH`.\nMake sure that the command finishes with no error.\n\n### Write the configuration file\n\nCreate the file `sqlpipe.yaml` in your working directory.\nAdd the database connection details and the pipeline steps to that file.\nGive each step a clear name and a valid SQL statement.\nThe tool reads only the keys that the sqlpipe documentation defines.\n\n### Run your first job\n\nRun this command from the directory that holds your configuration file:\n\n```bash\nsqlpipe run --config sqlpipe.yaml\n```\n\nIf the command fails, make sure that the configuration file exists at the path you give.\nIf your file uses a different path, put that path after `--config`.\nWhen the run ends, the tool shows the result in the terminal.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 38232,
+  "cost_usd": null,
+  "model": "cursor-grok-4.5-medium",
+  "condition": "agent-ste",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 154,
+    "sentences": 16,
+    "mean_sentence_words": 9.4,
+    "longest_sentence_words": 17,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

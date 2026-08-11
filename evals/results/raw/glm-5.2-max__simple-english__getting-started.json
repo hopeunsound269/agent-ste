@@ -1,0 +1,32 @@
+{
+  "text": "# Getting started\n\n## 1. Install sqlpipe\n\nInstall sqlpipe with this command:\n\n```\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nThe command puts the `sqlpipe` binary on your PATH. Make sure that the install completes without errors before you continue. Run `sqlpipe --version` to make sure that the install succeeded.\n\n## 2. Create the configuration file\n\nCreate a configuration file named `sqlpipe.yaml` in your project directory. The file tells sqlpipe which databases to read and where to write the data. For a full example, see the configuration reference.\n\n## 3. Run sqlpipe\n\nRun sqlpipe with this command:\n\n```\nsqlpipe run --config sqlpipe.yaml\n```\n\nsqlpipe reads the configuration file and starts the data transfer. Make sure that the file exists in your current directory, or give the full path to the file. The output shows the progress of each transfer. When the transfer is complete, sqlpipe writes a summary to the terminal.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 40127,
+  "cost_usd": null,
+  "model": "glm-5.2-max",
+  "condition": "simple-english",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 119,
+    "sentences": 12,
+    "mean_sentence_words": 9.9,
+    "longest_sentence_words": 18,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

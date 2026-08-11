@@ -1,0 +1,32 @@
+{
+  "text": "sqlpipe moves data from Postgres to S3 through a three-stage streaming pipeline designed for constant memory use and high throughput. The reader process connects to Postgres and pulls rows in fixed-size batches, avoiding full-table materialization and keeping backpressure manageable under load. Each batch flows to the converter, which encodes it into a Parquet row group, applying schema mapping and columnar compression before handing off the finished block downstream. The uploader then takes these row groups and writes them as multipart objects to S3, splitting large outputs into parts, retrying failed segments independently, and completing the multipart upload once every part succeeds. Because each stage operates on batches rather than the whole dataset, the pipeline can be tuned independently at each step, isolate failures to a single stage, and scale to datasets far larger than available memory.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 10265,
+  "cost_usd": null,
+  "model": "claude-sonnet-5-medium",
+  "condition": "baseline",
+  "scenario": "architecture",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 136,
+    "sentences": 5,
+    "mean_sentence_words": 27.2,
+    "longest_sentence_words": 35,
+    "violations": {
+      "sentence_over_limit": 3,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 3,
+    "violations_per_100w": 2.21
+  }
+}

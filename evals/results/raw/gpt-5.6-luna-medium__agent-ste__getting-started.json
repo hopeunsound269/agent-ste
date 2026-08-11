@@ -1,0 +1,32 @@
+{
+  "text": "## Getting started\n\nUse these steps to install and run `sqlpipe`.\n\n1. Install the CLI.\n\n   ```sh\n   curl -sSL https://get.sqlpipe.dev | sh\n   ```\n\n2. Create a file named `sqlpipe.yaml`.\n\n3. Add the required connection and pipeline values to `sqlpipe.yaml`.\n\n4. Make sure that the file uses valid YAML syntax.\n\n5. Run the first pipeline.\n\n   ```sh\n   sqlpipe run --config sqlpipe.yaml\n   ```\n\nThe `--config` option tells `sqlpipe` to read settings from `sqlpipe.yaml`. The command reports the pipeline result in your terminal.\n\nIf the command reports a configuration error, read the error message. Correct the related value in `sqlpipe.yaml`. Run the command again.\n\nIf the shell cannot find `sqlpipe`, open a new terminal. Run the command again. Your shell then loads the installed command path.\n\nKeep `sqlpipe.yaml` in a protected location. The file can contain database credentials. Do not add the file to a public repository. Use environment variables for secrets when the configuration supports them.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 12659,
+  "cost_usd": null,
+  "model": "gpt-5.6-luna-medium",
+  "condition": "agent-ste",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 142,
+    "sentences": 18,
+    "mean_sentence_words": 7.6,
+    "longest_sentence_words": 11,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 1,
+      "synonym_rotation": 1
+    },
+    "violations_total": 2,
+    "violations_per_100w": 1.41
+  }
+}

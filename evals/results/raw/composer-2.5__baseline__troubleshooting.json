@@ -1,0 +1,32 @@
+{
+  "text": "I'll look for sqlpipe documentation or code so the troubleshooting section matches how the tool actually works.\n## Troubleshooting\n\n### Connection timeouts to Postgres\n\nsqlpipe fails with `dial tcp: i/o timeout` when it cannot reach Postgres on port 5432 (or the port in your connection string). Verify that the host running sqlpipe can open a TCP connection to the database host\u2014firewalls, security groups, and VPC rules often block inbound traffic on 5432. For managed databases (RDS, Cloud SQL, etc.), add sqlpipe\u2019s outbound IP to the instance\u2019s allowed sources. If the network path is slow but reachable, increase `source.connect_timeout_seconds` in your config file.\n\n### S3 permission errors\n\nsqlpipe reports `AccessDenied` or `403 Forbidden` when the credentials or IAM policy cannot write to the target bucket. Confirm that `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` (or the configured profile) are valid and belong to an identity with `s3:PutObject` on the bucket and prefix you set in `target.bucket` and `target.prefix`. Check bucket policies and block-public-access settings\u2014they can deny writes even when IAM looks correct. Verify the bucket name and region match your config; a wrong region often surfaces as a permission error rather than \u201cbucket not found.\u201d",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 40735,
+  "cost_usd": null,
+  "model": "composer-2.5",
+  "condition": "baseline",
+  "scenario": "troubleshooting",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 176,
+    "sentences": 9,
+    "mean_sentence_words": 19.6,
+    "longest_sentence_words": 30,
+    "violations": {
+      "sentence_over_limit": 3,
+      "contraction": 1,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 1,
+      "latin_abbrev": 1,
+      "slop_word": 0,
+      "trailing_condition": 3,
+      "synonym_rotation": 3
+    },
+    "violations_total": 12,
+    "violations_per_100w": 6.82
+  }
+}

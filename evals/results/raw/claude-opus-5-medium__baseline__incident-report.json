@@ -1,0 +1,32 @@
+{
+  "text": "**Incident Report \u2014 Elevated API Error Rate**\n\n**Status: Resolved**\n\nBetween 14:02 and 14:31 UTC, approximately 12% of API requests failed with HTTP 502 errors.\n\nThe cause was a deploy that inadvertently removed a cache warmup step from our startup sequence. Without a populated cache, backend services were overwhelmed by requests that would normally have been served from cache, causing a portion of them to time out at the gateway.\n\nWe identified the change and reverted the deploy at 14:27 UTC. Error rates returned to normal by 14:31 UTC, and the service has been fully operational since.\n\nWe are adding a deploy check to verify cache warmup completes before traffic is served. We apologize for the disruption.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 9761,
+  "cost_usd": null,
+  "model": "claude-opus-5-medium",
+  "condition": "baseline",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 116,
+    "sentences": 8,
+    "mean_sentence_words": 14.5,
+    "longest_sentence_words": 29,
+    "violations": {
+      "sentence_over_limit": 1,
+      "contraction": 0,
+      "banned_modal": 1,
+      "perfect_tense": 2,
+      "ing_clause": 1,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 1
+    },
+    "violations_total": 6,
+    "violations_per_100w": 5.17
+  }
+}

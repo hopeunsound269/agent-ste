@@ -1,0 +1,32 @@
+{
+  "text": "## Getting started\n\nsqlpipe moves tables from one database to another. Follow the three steps below.\n\n### 1. Install the tool\n\nRun this command:\n\n```\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nThe script installs the `sqlpipe` binary in `/usr/local/bin`. To make sure that the installation worked, run `sqlpipe --version`. If the command fails with a permission error, run the script again with `sudo`.\n\n### 2. Write the configuration\n\nCreate a file with the name `sqlpipe.yaml` in your project directory. The file must contain three items:\n\n- The connection string for the source database\n- The connection string for the target database\n- The list of tables to copy\n\n```yaml\nsource: postgresql://user:password@localhost:5432/app\ntarget: mysql://user:password@localhost:3306/warehouse\ntables:\n  - customers\n  - orders\n```\n\n### 3. Run the first transfer\n\nRun this command:\n\n```\nsqlpipe run --config sqlpipe.yaml\n```\n\nsqlpipe reads the configuration and copies each table. The tool shows one progress line for each table.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 17813,
+  "cost_usd": null,
+  "model": "claude-opus-5-medium",
+  "condition": "agent-ste",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 110,
+    "sentences": 11,
+    "mean_sentence_words": 9.7,
+    "longest_sentence_words": 23,
+    "violations": {
+      "sentence_over_limit": 1,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 1,
+    "violations_per_100w": 0.91
+  }
+}

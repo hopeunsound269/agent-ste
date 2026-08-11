@@ -1,0 +1,32 @@
+{
+  "text": "API Request Failures from 14:02 to 14:31 UTC\n\nBetween 14:02 and 14:31 UTC, 12% of API requests failed with HTTP 502 responses.\n\nA deploy started the incident at 14:02 UTC. The deploy removed the cache warmup step. The missing step caused the API failures.\n\nAt 14:27 UTC, we reverted the deploy. The revert restored the cache warmup step. The API returned to its normal error rate at 14:31 UTC.\n\nThis incident did not affect requests outside the stated period. We will add a deployment control that makes sure that every deploy runs the cache warmup step. We will also add an alert for a missing cache warmup step.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 25346,
+  "cost_usd": null,
+  "model": "gpt-5.6-sol-medium",
+  "condition": "agent-ste",
+  "scenario": "incident-report",
+  "type": "descriptive",
+  "lint": {
+    "type": "descriptive",
+    "words": 108,
+    "sentences": 10,
+    "mean_sentence_words": 10.8,
+    "longest_sentence_words": 22,
+    "violations": {
+      "sentence_over_limit": 0,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 0
+    },
+    "violations_total": 0,
+    "violations_per_100w": 0.0
+  }
+}

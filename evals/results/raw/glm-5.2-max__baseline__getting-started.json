@@ -1,0 +1,32 @@
+{
+  "text": "# Getting started\n\nInstall sqlpipe with a single command:\n\n```bash\ncurl -sSL https://get.sqlpipe.dev | sh\n```\n\nThis downloads the latest binary and places it on your `PATH`. Verify the installation with `sqlpipe --version`.\n\nNext, create a configuration file named `sqlpipe.yaml` in your project directory. This file defines your source and target databases, the transformations to apply, and any scheduling options. A minimal configuration looks like:\n\n```yaml\nsource:\n  dsn: postgres://user:pass@localhost:5432/shop\ntarget:\n  dsn: postgres://user:pass@localhost:5432/warehouse\npipelines:\n  - name: orders\n    query: SELECT * FROM orders WHERE updated_at > :last_run\n```\n\nRun your first pipeline with:\n\n```bash\nsqlpipe run --config sqlpipe.yaml\n```\n\nsqlpipe connects to the source, executes each pipeline query, and writes the results to the target. Check the exit code and logs to confirm success, then schedule the command via cron or your preferred runner for repeat executions.",
+  "input_tokens": null,
+  "output_tokens": null,
+  "duration_ms": 9832,
+  "cost_usd": null,
+  "model": "glm-5.2-max",
+  "condition": "baseline",
+  "scenario": "getting-started",
+  "type": "procedural",
+  "lint": {
+    "type": "procedural",
+    "words": 99,
+    "sentences": 9,
+    "mean_sentence_words": 11.0,
+    "longest_sentence_words": 22,
+    "violations": {
+      "sentence_over_limit": 1,
+      "contraction": 0,
+      "banned_modal": 0,
+      "perfect_tense": 0,
+      "ing_clause": 0,
+      "semicolon": 0,
+      "latin_abbrev": 0,
+      "slop_word": 0,
+      "trailing_condition": 0,
+      "synonym_rotation": 2
+    },
+    "violations_total": 3,
+    "violations_per_100w": 3.03
+  }
+}
