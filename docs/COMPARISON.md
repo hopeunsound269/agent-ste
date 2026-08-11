@@ -24,6 +24,7 @@ The linter counts the mechanical STE rules: sentence length, banned modals, perf
 | Agent-facing text rules (prompts, tool descriptions, error messages) | **Yes, a dedicated section** | No | Framing only |
 | Word-count rulings for code and identifiers | **Yes** | No | No |
 | Prompt fallback for tools without skills | Yes, compact + micro | Yes | No |
+| Skill size on activation (approx. tokens) | 2,200 | 4,500 | 1,400 |
 | Open benchmark with raw data | **Yes, 288 generations in-repo** | Yes, 48 generations | No |
 | Output style / slash commands for Claude Code | No | **Yes** | No |
 | Community size | new | **largest** | mid |
