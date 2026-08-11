@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this skill or its benchmark, cite it as below."
+title: "agent-ste: an ASD-STE100 Simplified Technical English skill for LLM agents"
+type: software
+authors:
+  - family-names: "Dela Vega"
+    given-names: "Abry"
+repository-code: "https://github.com/abryfs/agent-ste"
+url: "https://github.com/abryfs/agent-ste"
+license: MIT
+version: 1.0.0
+date-released: 2026-08-11
+keywords:
+  - ASD-STE100
+  - Simplified Technical English
+  - controlled language
+  - agent skills
+  - LLM
+  - technical writing
+  - benchmark

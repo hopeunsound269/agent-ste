@@ -23,6 +23,15 @@ We benchmarked agent-ste against [SimpleEnglish](https://github.com/AminBlg/Simp
 
 **Result: agent-ste removed 95.5% of measured STE violations. SimpleEnglish removed 85.1% on the identical run.**
 
+![Mean STE violations per 100 words: no skill 2.23, SimpleEnglish 0.29, agent-ste 0.09](assets/violations-mean.svg)
+
+agent-ste scored best on 11 of the 12 models and hit zero violations on 4 of them:
+
+![STE violations per 100 words for each model and condition](assets/violations-by-model.svg)
+
+<details>
+<summary>The same numbers as a table</summary>
+
 | Model | No skill | SimpleEnglish | agent-ste |
 |---|---|---|---|
 | claude-opus-4-8 | 3.50 | 0.17 | **0.09** |
@@ -38,9 +47,38 @@ We benchmarked agent-ste against [SimpleEnglish](https://github.com/AminBlg/Simp
 | gemini-3.6-flash | 1.63 | 0.16 | **0.08** |
 | cursor-grok-4.5 | 2.04 | 0.33 | **0.00** |
 
-Violations per 100 words, mean of 8 tasks, lower is better. A blind pairwise judge scored the two skills' outputs with no labels, in both orders. The judge preferred agent-ste in 52 of 95 pairs, tied 17, and preferred SimpleEnglish in 26. Output length stayed comparable across all three conditions, so the skill does not win because it writes less.
+Violations per 100 words, mean of 8 tasks, lower is better.
+
+</details>
+
+The linter measures rule-following. For quality, a blind pairwise judge scored the two skills' outputs with no labels, in both orders:
+
+![Blind judge results: agent-ste 52 wins, 17 ties, SimpleEnglish 26 wins](assets/judge.svg)
+
+Output length stayed comparable across all three conditions, so the skill does not win because it writes less. As of August 2026, agent-ste holds the top score on this open benchmark. The charts regenerate from the raw data with one command: `python3 evals/make_charts.py`.
 
 The full method, the caveats, and the raw JSON for all 288 generations and 95 judged pairs live in [`evals/results/`](evals/results/RESULTS.md). The honest ones: one generation per cell, a Claude judge scored partly-Claude output, and both skills coach the rules that the linter counts. To reproduce the run, read [Reproduce](#reproduce).
+
+## Before and after
+
+One benchmark task: write a README introduction for a CLI tool. Model: `gemini-3.6-flash`, no skill:
+
+```text
+**sqlpipe** is a lightweight, high-performance CLI tool designed to seamlessly
+stream PostgreSQL tables into Amazon S3 as optimized Apache Parquet files.
+Built for modern data engineering and analytics workflows, ...
+```
+
+The same model and the same task, with agent-ste:
+
+```text
+`sqlpipe` is a command-line tool that exports data from PostgreSQL databases
+to Amazon S3. The tool reads tables from your database and writes the data to
+S3 as Apache Parquet files. ... If a network error occurs during a transfer,
+`sqlpipe` retries the failed part automatically.
+```
+
+Every adjective without a fact is gone. Every condition starts its sentence. More unedited outputs, with violation counts and the exact source files, are in [`docs/EXAMPLES.md`](docs/EXAMPLES.md).
 
 This README holds itself to the same standard. CI lints the prose of this page with the benchmark linter and fails above zero violations. The linter parses prose, not markdown layout, so table rows and badge lines stay out of the pass.
 
@@ -81,7 +119,7 @@ The skill also targets the text that only machines read: tool descriptions, erro
 
 ## Alternatives
 
-Two other projects cover this ground. Both are good. Pick what fits:
+Two other projects cover this ground. Both are good. Pick what fits. A full feature and benchmark comparison is in [`docs/COMPARISON.md`](docs/COMPARISON.md).
 
 - [SimpleEnglish](https://github.com/AminBlg/SimpleEnglish) — the most popular STE skill, with a plugin marketplace, an output style, and the benchmark harness this repo builds on. Pick it for the Claude Code plugin ecosystem around it.
 - [asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill) — a single-file rewriter with a sharp framing: STE as a fix for agent-to-agent ambiguity. Pick it for a minimal Claude-Code-only setup.

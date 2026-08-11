@@ -15,9 +15,11 @@ jobs:
           python-version: "3.12"
       - name: Linter self-test
         run: python3 evals/ste_lint.py --self-test
-      - name: README prose lints clean under the benchmark linter
-        run: python3 evals/lint_readme.py README.md
-        working-directory: .
+      - name: Prose lints clean under the benchmark linter
+        run: |
+          python3 evals/lint_readme.py README.md
+          python3 evals/lint_readme.py docs/EXAMPLES.md
+          python3 evals/lint_readme.py docs/COMPARISON.md
       - name: SKILL.md frontmatter is valid
         run: |
           python3 - <<'EOF'
