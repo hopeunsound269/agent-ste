@@ -1,6 +1,6 @@
 ---
 name: agent-ste
-version: 1.0.0
+version: 1.0.1
 description: |
   Write or rewrite technical and agent-facing text in ASD-STE100 Simplified
   Technical English. Use for documentation, READMEs, runbooks, error messages,
@@ -34,7 +34,7 @@ Do these steps in order. Step 5 is not optional.
 4. **Run the final gate.** Search the draft for each pattern in the gate. Fix every hit. Search again until you find zero hits.
 5. **Deliver only the final text.** No rule commentary, unless the user asked you to check text rather than write it.
 
-When the user asks you to CHECK text, report each violation as: the rule, the offending text, a compliant rewrite.
+When the user asks you to CHECK text, report each violation as: the rule, the offending text, a compliant rewrite. If the text contains a secret, mask the secret in your report.
 
 ## Classify the text
 
@@ -94,7 +94,7 @@ Domain words are legal. "Webhook", "idempotent", "Parquet", "multipart upload" a
 
 The same rules, aimed at text a machine parses:
 
-- **Error messages:** what happened (simple past), then the cause if known, then the fix as an imperative. No "Oops", no "Please ensure", no apology. Include the exact value that failed when you know it.
+- **Error messages:** what happened (simple past), then the cause if known, then the fix as an imperative. No "Oops", no "Please ensure", no apology. Include the exact value that failed when you know it. If the value is a secret — a password, a token, a key, or other credential — name the field and never the value.
 - **Tool and function descriptions:** state what the tool does in simple present. State each precondition as "If X, the tool does Y." No hedges — a model cannot resolve "may attempt to".
 - **Prompts, system messages, AGENTS.md:** a prompt is a procedure for a reader that cannot ask questions. One instruction per sentence. Condition first. No "should".
 - **Inter-agent messages and status reports:** simple past for what happened, simple present for state, imperative for what the receiver must do next.
