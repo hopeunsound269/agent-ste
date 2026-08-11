@@ -94,6 +94,15 @@ The [skills CLI](https://github.com/vercel-labs/skills) detects your agents (Cla
 npx skills use abryfs/agent-ste@agent-ste
 ```
 
+Claude Code users can install the repo as a plugin instead:
+
+```
+/plugin marketplace add abryfs/agent-ste
+/plugin install agent-ste@agent-ste
+```
+
+The plugin route gives you update management inside Claude Code. The two routes install the same skill file. Pick one.
+
 When your tool has no skill support, paste [`prompts/system-prompt.md`](prompts/system-prompt.md) into your system prompt, AGENTS.md, or custom instructions. A version of about 60 tokens is included for tight budgets.
 
 Then ask for any technical writing, or say: "rewrite this with agent-ste".
@@ -121,7 +130,7 @@ The skill also targets the text that only machines read: tool descriptions, erro
 
 Two other projects cover this ground. Both are good. Pick what fits. A full feature and benchmark comparison is in [`docs/COMPARISON.md`](docs/COMPARISON.md).
 
-- [SimpleEnglish](https://github.com/AminBlg/SimpleEnglish) — the most popular STE skill, with a plugin marketplace, an output style, and the benchmark harness this repo builds on. Pick it for the Claude Code plugin ecosystem around it.
+- [SimpleEnglish](https://github.com/AminBlg/SimpleEnglish) — the most popular STE skill, with an output style, a plugin marketplace, and the benchmark harness this repo builds on. Pick it for the output style.
 - [asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill) — a single-file rewriter with a sharp framing: STE as a fix for agent-to-agent ambiguity. Pick it for a minimal Claude-Code-only setup.
 - The [official standard](https://www.asd-ste100.org/) — a free download from ASD. When you need the real dictionary and word-level rulings, use the standard itself. No skill replaces it, this one included.
 

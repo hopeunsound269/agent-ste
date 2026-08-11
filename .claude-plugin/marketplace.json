@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "agent-ste",
+  "owner": {
+    "name": "Abraham Sheer Dela Vega",
+    "url": "https://github.com/abryfs"
+  },
+  "metadata": {
+    "description": "Marketplace for the agent-ste plugin: ASD-STE100 Simplified Technical English for agents.",
+    "version": "1.0.1"
+  },
+  "plugins": [
+    {
+      "name": "agent-ste",
+      "source": "./",
+      "description": "Write technical and agent-facing text in ASD-STE100 Simplified Technical English. Benchmarked: 95.5% fewer STE violations than baseline across 12 models.",
+      "category": "writing",
+      "tags": ["ste", "asd-ste100", "technical-writing", "documentation"]
+    }
+  ]
+}

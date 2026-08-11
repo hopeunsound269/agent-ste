@@ -18,22 +18,22 @@ The linter counts the mechanical STE rules: sentence length, banned modals, perf
 
 | | agent-ste | SimpleEnglish | asd-ste100-skill |
 |---|---|---|---|
-| Format | Agent Skills standard | Agent Skills standard + Claude plugin | Claude Code skill |
-| Install | `npx skills add abryfs/agent-ste` | `npx skills add AminBlg/SimpleEnglish` or plugin marketplace | manual copy |
+| Format | Agent Skills standard + Claude plugin | Agent Skills standard + Claude plugin | Claude Code skill |
+| Install | `npx skills add abryfs/agent-ste` or plugin marketplace | `npx skills add AminBlg/SimpleEnglish` or plugin marketplace | manual copy |
 | Mandatory self-check before delivery | **Yes: a 10-search final gate** | No | No |
 | Agent-facing text rules (prompts, tool descriptions, error messages) | **Yes, a dedicated section** | No | Framing only |
 | Word-count rulings for code and identifiers | **Yes** | No | No |
 | Prompt fallback for tools without skills | Yes, compact + micro | Yes | No |
 | Skill size on activation (approx. tokens) | 2,200 | 4,500 | 1,400 |
 | Open benchmark with raw data | **Yes, 288 generations in-repo** | Yes, 48 generations | No |
-| Output style / slash commands for Claude Code | No | **Yes** | No |
+| Output style for Claude Code | No | **Yes** | No |
 | Community size | new | **largest** | mid |
 | License | MIT | MIT | MIT |
 
 ## Which one to pick
 
 - Pick **agent-ste** for measured rule-following across model families, and for text that other machines parse: system prompts, tool descriptions, error messages, and inter-agent messages.
-- Pick **SimpleEnglish** for the Claude Code plugin ecosystem: output styles, slash commands, and hooks. Its benchmark harness is the base of ours, and the project deserves the credit for it.
+- Pick **SimpleEnglish** for its output style, which restyles all of Claude Code's replies, not only the writing tasks. Its benchmark harness is the base of ours, and the project deserves the credit for it.
 - Pick **asd-ste100-skill** for a minimal single-file rewriter inside Claude Code.
 - Pick **no skill** for marketing text and brand writing. STE deletes persuasion by design.
 

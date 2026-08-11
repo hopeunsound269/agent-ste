@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "agent-ste",
+  "version": "1.0.1",
+  "description": "Write technical and agent-facing text in ASD-STE100 Simplified Technical English. Benchmarked: 95.5% fewer STE violations than baseline across 12 models.",
+  "author": {
+    "name": "Abraham Sheer Dela Vega",
+    "url": "https://github.com/abryfs"
+  },
+  "homepage": "https://github.com/abryfs/agent-ste",
+  "repository": "https://github.com/abryfs/agent-ste",
+  "license": "MIT",
+  "keywords": [
+    "ste",
+    "asd-ste100",
+    "simplified-technical-english",
+    "technical-writing",
+    "documentation",
+    "agent-skills"
+  ]
+}
