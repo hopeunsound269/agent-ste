@@ -17,7 +17,7 @@
 
 Your agent writes long sentences, hedges with `should`, and rotates synonyms. A reader who cannot ask questions then guesses. Sometimes the reader is a tired human. Sometimes the reader is another LLM that parses a tool description or an error message. STE removes the guessing. This skill enforces STE with one addition the other skills lack: a mandatory final gate of ten search-and-fix passes before the agent delivers.
 
-## Measured, not claimed
+## Benchmark results
 
 We benchmarked agent-ste against [SimpleEnglish](https://github.com/AminBlg/SimpleEnglish), the most popular STE skill, on its own open benchmark. The measurement layer is theirs, unmodified: the same 8 writing tasks, the same prompt wrapper, and a byte-identical copy of their linter. All three conditions ran fresh on one harness, across 12 models from 5 model families.
 
@@ -57,7 +57,7 @@ The linter measures rule-following. For quality, a blind pairwise judge scored t
 
 Output length stayed comparable across all three conditions, so the skill does not win because it writes less. As of August 2026, agent-ste holds the top score on this open benchmark. The charts regenerate from the raw data with one command: `python3 evals/make_charts.py`.
 
-The full method, the caveats, and the raw JSON for all 288 generations and 95 judged pairs live in [`evals/results/`](evals/results/RESULTS.md). The honest ones: one generation per cell, a Claude judge scored partly-Claude output, and both skills coach the rules that the linter counts. To reproduce the run, read [Reproduce](#reproduce).
+The full method, the caveats, and the raw JSON for all 288 generations and 95 judged pairs live in [`evals/results/`](evals/results/RESULTS.md). Caveats: one generation per cell, a Claude judge scored partly-Claude output, and both skills coach the rules that the linter counts. To reproduce the run, read [Reproduce](#reproduce).
 
 ## Before and after
 
@@ -78,9 +78,9 @@ S3 as Apache Parquet files. ... If a network error occurs during a transfer,
 `sqlpipe` retries the failed part automatically.
 ```
 
-Every adjective without a fact is gone. Every condition starts its sentence. More unedited outputs, with violation counts and the exact source files, are in [`docs/EXAMPLES.md`](docs/EXAMPLES.md).
+The skill deleted the adjectives that carry no facts and moved each condition to the front of its sentence. More unedited outputs, with violation counts and the exact source files, are in [`docs/EXAMPLES.md`](docs/EXAMPLES.md).
 
-This README holds itself to the same standard. CI lints the prose of this page with the benchmark linter and fails above zero violations. The linter parses prose, not markdown layout, so table rows and badge lines stay out of the pass.
+CI lints the prose of this page with the same benchmark linter and fails above zero violations. The linter parses prose, not markdown layout, so table rows and badge lines stay out of the pass.
 
 ## Install
 
@@ -100,7 +100,7 @@ Then ask for any technical writing, or say: "rewrite this with agent-ste".
 
 ## What the skill does
 
-The skill classifies each passage as procedural or descriptive, locks one word per concept, and applies the STE writing rules. The load-bearing part comes last. Before the agent delivers, it must run ten explicit searches on its own draft:
+The skill classifies each passage as procedural or descriptive, locks one word per concept, and applies the STE writing rules. Before the agent delivers, it must run ten explicit searches on its own draft:
 
 1. Every contraction.
 2. `should`, `would`, `may`, `might`, `could`.
@@ -147,6 +147,8 @@ python3 evals/run_bench.py --judge     # blind pairwise judge pass
 **Does the dictionary block technical words?** No. STE allows technical names and technical verbs from your domain. The rules govern the connective English around your jargon, not the jargon.
 
 **Why not prompt "write clearly"?** "Clearly" is an opinion. "No sentence over 20 words" is a test that the writer can run. The final gate turns every rule into a search.
+
+**What does the skill cost in tokens?** At rest, your agent loads only the description: about 100 tokens. On activation, the full skill loads: about 2,200 tokens, half the size of the most popular STE skill. The prompt fallbacks cost about 230 and 60 tokens.
 
 **Will my docs sound flat?** Yes, and that is the point. Keep your voice for your blog. Do not apply STE to marketing text.
 
